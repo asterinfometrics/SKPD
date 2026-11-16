@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AboutLeadershipSection.css';
 
 import leader1 from '../../assets/leader_1.webp';
@@ -9,29 +10,79 @@ import leader4 from '../../assets/leader_4.webp';
 const committeeMembers = [
   {
     id: 1,
-    name: 'R. Srinivasan',
-    role: 'President, Alumni Association',
+    name: 'Voora Lakshmi Narasimha Rao',
+    role: 'President',
     imgSrc: leader1,
     alt: 'Portrait of R. Srinivasan, President',
   },
   {
     id: 2,
-    name: 'S. Venkatesh',
-    role: 'Vice President, Alumni Association',
+    name: 'A.Sudhakar',
+    role: 'Vice President',
     imgSrc: leader2,
     alt: 'Portrait of S. Venkatesh, Vice President',
   },
   {
     id: 3,
-    name: 'K. Prakash',
-    role: 'Secretary, Alumni Association',
+    name: 'P.RadhaKrishna',
+    role: 'Vice President',
+    imgSrc: leader2,
+    alt: 'Portrait of S. Venkatesh, Vice President',
+  },
+  {
+    id: 4,
+    name: 'V.Anjaneyulu',
+    role: 'Vice President',
+    imgSrc: leader2,
+    alt: 'Portrait of S. Venkatesh, Vice President',
+  },
+
+  {
+    id: 5,
+    name: 'Y.Suresh Babu',
+    role: 'Secretary',
     imgSrc: leader3,
     alt: 'Portrait of K. Prakash, Secretary',
   },
   {
-    id: 4,
-    name: 'A. Raghavan',
+    id: 6,
+    name: 'V.Ramesh Gupta',
+    role: 'Joint Secretary',
+    imgSrc: leader3,
+    alt: 'Portrait of K. Prakash, Secretary',
+  },
+  {
+    id: 7,
+    name: 'Srinivasulu Kanamarlapudi',
     role: 'Treasurer, Alumni Association',
+    imgSrc: leader4,
+    alt: 'Portrait of A. Raghavan, Treasurer',
+  },
+  {
+    id: 8,
+    name: 'J.Badrinath',
+    role: 'Executive Commitee',
+    imgSrc: leader4,
+    alt: 'Portrait of A. Raghavan, Treasurer',
+  },
+  {
+    id: 9,
+    name: 'V.Venkateswarlu',
+    role: 'Executive Commitee',
+    imgSrc: leader4,
+    alt: 'Portrait of A. Raghavan, Treasurer',
+  },
+  {
+    id: 10,
+    name: 'Mukkala Sriramprasad',
+    role: 'Executive Commitee',
+    imgSrc: leader4,
+    alt: 'Portrait of A. Raghavan, Treasurer',
+  },
+  {
+    id: 11,
+    name: 'K.Ramesh',
+    role: 'Executive Commitee',
     imgSrc: leader4,
     alt: 'Portrait of A. Raghavan, Treasurer',
   },
@@ -56,7 +107,7 @@ export default function AboutLeadershipSection() {
 
         {/* 4 Leadership Cards Grid */}
         <div className="about-leadership-grid">
-          {committeeMembers.map((member) => (
+          {committeeMembers.slice(0, 4).map((member) => (
             <div key={member.id} className="leadership-card">
               <div className="leadership-card-media">
                 <img
@@ -77,6 +128,18 @@ export default function AboutLeadershipSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Button to navigate to Membership Page */}
+        <div className="about-leadership-cta-wrap">
+          <Link to="/membership#committee" className="about-leadership-cta-btn">
+            <span className="btn-chevron-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </span>
+            <span>View All Committee Members</span>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,0 +1,541 @@
+/* =========================================================
+   SKPD Membership Form Section Styles (Step 1, 2, 3)
+   Matching Reference: media_1794826372878_e372dc3c.png
+   ========================================================= */
+
+.membership-form-section {
+  position: relative;
+  width: 100%;
+  background-color: #F5F6F8;
+  /* Blueprint Grid Pattern */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  padding: 75px 5%;
+  box-sizing: border-box;
+}
+
+.membership-form-container {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Area */
+.membership-form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.membership-form-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #001a40;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
+
+.membership-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.membership-badge-text {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.membership-form-title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #333333;
+  margin: 0;
+}
+
+.membership-title-highlight {
+  color: #032153;
+}
+
+/* Stepper Indicator */
+.membership-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 580px;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.step-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.step-label {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: #333333;
+  margin-top: 8px;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+/* Active Step */
+.step-item.active .step-circle {
+  background-color: #032153;
+  border-color: #032153;
+  color: #ffffff;
+}
+
+.step-item.active .step-label {
+  color: #333333;
+  font-weight: 700;
+}
+
+/* Completed Step */
+.step-item.completed .step-circle {
+  background-color: #032153;
+  border-color: #032153;
+  color: #ffffff;
+}
+
+.step-item.completed .step-label {
+  color: #032153;
+}
+
+/* Connecting Line */
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background-color: #FFFFFF;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.step-connector.active {
+  background-color: #032153;
+}
+
+/* Form Card */
+.membership-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 44px 48px;
+  box-sizing: border-box;
+}
+
+.form-panel-heading {
+  margin-bottom: 30px;
+}
+
+.form-panel-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #121826;
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+}
+
+.form-panel-subtitle {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* 2 Column Form Grid */
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 22px;
+  margin-bottom: 32px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.field-required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.form-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.form-input-wrapper.with-icon .form-input {
+  padding-left: 44px;
+}
+
+.input-prefix-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.form-input:focus {
+  border-color: #032153;
+  box-shadow: 0 0 0 3px rgba(3, 33, 83, 0.08);
+}
+
+/* Form Footer Actions */
+.form-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.form-footer-actions.step-between {
+  justify-content: space-between;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e1;
+  accent-color: #001a40;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: #475569;
+}
+
+/* Next / Submit Button */
+.form-btn-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #cbd5e1;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px 10px 14px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-chevron-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.form-btn-next.is-valid {
+  background-color: #001a40;
+}
+
+.form-btn-next.is-valid:hover {
+  transform: translateY(-1px);
+}
+
+.form-btn-next.submit-mode {
+  background-color: #032153;
+}
+
+.form-btn-back {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-btn-back:hover {
+  border-color: #001a40;
+  color: #001a40;
+}
+
+/* Success State */
+.membership-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.membership-success-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 2px solid #a7f3d0;
+}
+
+.membership-success-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: #121826;
+  margin-bottom: 12px;
+}
+
+.membership-success-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #64748b;
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.membership-btn-primary {
+  background: #001a40;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (Membership Form)
+   ========================================================= */
+
+/* Extra Large (1920px Full-width layout) */
+@media (min-width: 1920px) {
+  .membership-form-container {
+    max-width: 1000px;
+  }
+  .membership-card {
+    padding: 52px 56px;
+  }
+}
+
+/* Large Desktop (1440px Wide desktop layout) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .membership-form-container {
+    max-width: 920px;
+  }
+}
+
+/* Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .membership-form-container {
+    max-width: 880px;
+  }
+}
+
+/* Laptop (1024px Small laptop layout) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .membership-form-container {
+    max-width: 820px;
+  }
+  .membership-card {
+    padding: 40px 36px;
+  }
+}
+
+/* Tablet (768px Tablet layout) */
+@media (max-width: 768px) {
+  .membership-form-section {
+    padding: 48px 20px 64px 20px;
+  }
+  .membership-form-title {
+    font-size: 34px;
+  }
+  .membership-card {
+    padding: 34px 28px;
+    border-radius: 22px;
+  }
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+  .form-footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .form-btn-next {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Mobile Large (430px Large mobile layout) */
+@media (max-width: 430px) {
+  .membership-form-section {
+    padding: 36px 16px 52px 16px;
+  }
+  .membership-form-title {
+    font-size: 28px;
+  }
+  .membership-card {
+    padding: 26px 18px;
+    border-radius: 18px;
+  }
+  .step-circle {
+    width: 40px;
+    height: 40px;
+  }
+  .step-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .step-label {
+    font-size: 10.5px;
+  }
+  .step-connector {
+    margin: 0 8px 20px 8px;
+  }
+}
+
+/* Mobile (375px Standard mobile layout) */
+@media (max-width: 375px) {
+  .membership-form-title {
+    font-size: 26px;
+  }
+  .membership-card {
+    padding: 22px 16px;
+  }
+  .checkbox-text {
+    font-size: 12.5px;
+  }
+}
+
+/* Mobile Small (320px Small mobile layout) */
+@media (max-width: 320px) {
+  .membership-form-section {
+    padding: 28px 12px 40px 12px;
+  }
+  .membership-form-title {
+    font-size: 23px;
+  }
+  .step-circle {
+    width: 36px;
+    height: 36px;
+  }
+  .step-label {
+    font-size: 9.5px;
+  }
+  .step-connector {
+    margin: 0 4px 18px 4px;
+  }
+  .membership-card {
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+}
+

@@ -47,6 +47,7 @@ export default function MemoriesSection() {
     <section className="memories-section" id="stories">
       <div className="memories-container">
         <div className="memories-header">
+
           <div className="badge-pill">
             <span className="badge-dot"></span>
             <span className="badge-text">THE YEARS THAT SHAPED US</span>

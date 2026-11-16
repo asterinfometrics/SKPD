@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './AboutContact.css';
 import contactCampus from '../../assets/contact_campus.webp';
 

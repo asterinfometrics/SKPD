@@ -10,7 +10,10 @@ export default function Navbar({ activePage }) {
   const location = useLocation();
 
   const currentPath = location?.pathname || '/';
-  const effectiveActive = activePage || (currentPath === '/about' ? 'about' : 'home');
+  const effectiveActive = activePage || (
+    currentPath === '/about' ? 'about' :
+    currentPath === '/membership' ? 'membership' : 'home'
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +39,7 @@ export default function Navbar({ activePage }) {
   const leftNavItems = [
     { label: 'Home', to: '/', id: 'home' },
     { label: 'About', to: '/about', id: 'about' },
-    { label: 'Membership', to: '/#membership', id: 'membership' },
+    { label: 'Membership', to: '/membership', id: 'membership' },
   ];
 
   const rightNavItems = [
@@ -116,7 +119,7 @@ export default function Navbar({ activePage }) {
             </Link>
           ))}
           <Link
-            to="/#membership"
+            to="/membership"
             className="skpd-mobile-cta"
             onClick={() => setMobileMenuOpen(false)}
           >

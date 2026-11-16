@@ -1,0 +1,250 @@
+/* =========================================================
+   SKPD Membership Benefits Section Styles
+   Matching Reference: media_1794826399805_1090a778.png
+   ========================================================= */
+
+.membership-benefits-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 75px 5%;
+  box-sizing: border-box;
+}
+
+.membership-benefits-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Area */
+.benefits-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 56px;
+}
+
+.benefits-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f4f9;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
+
+.benefits-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #032153;
+  border-radius: 50%;
+}
+
+.benefits-badge-text {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #121826;
+  text-transform: uppercase;
+}
+
+.benefits-title {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin: 0 0 12px 0;
+}
+
+.benefits-highlight {
+  color: #032153;
+}
+
+.benefits-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  max-width: 620px;
+}
+
+/* 4 Column Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 36px;
+  row-gap: 40px;
+  width: 100%;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Hexagonal Icon Badge */
+.hexagon-badge-wrapper {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexagon-badge {
+  width: 76px;
+  height: 86px;
+  background-color: #EDEFF3;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.3s ease;
+}
+
+.benefit-card:hover .hexagon-badge {
+  background-color: #e2eaf5;
+  transform: translateY(-5px);
+}
+
+.hexagon-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #032153;
+}
+
+/* Typography */
+.benefit-card-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.015em;
+}
+
+.benefit-card-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #808080;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (Membership Benefits)
+   ========================================================= */
+
+/* Extra Large (1920px Full-width layout) */
+@media (min-width: 1920px) {
+  .benefits-grid {
+    column-gap: 48px;
+  }
+  .benefits-title {
+    font-size: 44px;
+  }
+}
+
+/* Large Desktop (1440px Wide desktop layout) */
+
+
+/* Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+  .benefits-grid {
+    column-gap: 28px;
+  }
+}
+
+/* Laptop (1024px Small laptop layout) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .membership-benefits-section {
+    padding: 64px 20px 80px 20px;
+  }
+  .benefits-title {
+    font-size: 34px;
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+    row-gap: 36px;
+  }
+}
+
+/* Tablet (768px Tablet layout) */
+@media (max-width: 768px) {
+  .membership-benefits-section {
+    padding: 56px 20px 72px 20px;
+  }
+  .benefits-header {
+    margin-bottom: 40px;
+  }
+  .benefits-title {
+    font-size: 32px;
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap: 32px;
+  }
+  .benefit-card-title {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Large (430px Large mobile layout) */
+@media (max-width: 430px) {
+  .membership-benefits-section {
+    padding: 44px 16px 60px 16px;
+  }
+  .benefits-header {
+    margin-bottom: 32px;
+  }
+  .benefits-title {
+    font-size: 27px;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .hexagon-badge {
+    width: 68px;
+    height: 78px;
+  }
+}
+
+/* Mobile (375px Standard mobile layout) */
+@media (max-width: 375px) {
+  .benefits-title {
+    font-size: 25px;
+  }
+  .benefit-card-desc {
+    font-size: 13.5px;
+  }
+}
+
+/* Mobile Small (320px Small mobile layout) */
+@media (max-width: 320px) {
+  .membership-benefits-section {
+    padding: 36px 12px 48px 12px;
+  }
+  .benefits-title {
+    font-size: 22px;
+  }
+  .hexagon-badge {
+    width: 60px;
+    height: 70px;
+  }
+}
+
