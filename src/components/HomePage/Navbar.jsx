@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import CrestLogo from './CrestLogo';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const currentPath = location?.pathname || '/';
+  const effectiveActive = activePage || (currentPath === '/about' ? 'about' : 'home');
 
   const leftNavItems = [
-    { label: 'Home', href: '#home', active: true },
-    { label: 'About', href: '#about' },
-    { label: 'Membership', href: '#membership' },
+    { label: 'Home', to: '/', id: 'home' },
+    { label: 'About', to: '/about', id: 'about' },
+    { label: 'Membership', to: '/#membership', id: 'membership' },
   ];
 
   const rightNavItems = [
-    { label: 'Events', href: '#events' },
-    { label: 'Articles', href: '#articles' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Events', to: '/#events', id: 'events' },
+    { label: 'Articles', to: '/#articles', id: 'articles' },
+    { label: 'Contact', to: '/#contact', id: 'contact' },
   ];
 
   return (
@@ -23,29 +28,33 @@ export default function Navbar() {
         {/* Left Navigation Links */}
         <nav className="skpd-nav-group skpd-nav-left" aria-label="Main Navigation Left">
           {leftNavItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
-              className={`skpd-nav-link ${item.active ? 'active' : ''}`}
+              to={item.to}
+              className={`skpd-nav-link ${effectiveActive === item.id ? 'active' : ''}`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Center Logo Bridge */}
         <div className="skpd-logo-anchor">
-          <a href="#home" className="skpd-crest-link" aria-label="SKPD Alumni Home">
+          <Link to="/" className="skpd-crest-link" aria-label="SKPD Alumni Home">
             <CrestLogo className="skpd-nav-crest" width={112} height={112} />
-          </a>
+          </Link>
         </div>
 
         {/* Right Navigation Links */}
         <nav className="skpd-nav-group skpd-nav-right" aria-label="Main Navigation Right">
           {rightNavItems.map((item) => (
-            <a key={item.label} href={item.href} className="skpd-nav-link">
+            <Link
+              key={item.label}
+              to={item.to}
+              className={`skpd-nav-link ${effectiveActive === item.id ? 'active' : ''}`}
+            >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -66,22 +75,22 @@ export default function Navbar() {
       <div className={`skpd-mobile-drawer ${mobileMenuOpen ? 'is-open' : ''}`}>
         <nav className="skpd-mobile-links">
           {[...leftNavItems, ...rightNavItems].map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
-              className={`skpd-mobile-link ${item.active ? 'active' : ''}`}
+              to={item.to}
+              className={`skpd-mobile-link ${effectiveActive === item.id ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#journey"
+          <Link
+            to="/#membership"
             className="skpd-mobile-cta"
             onClick={() => setMobileMenuOpen(false)}
           >
             Begin the Journey
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FooterSection.css';
 import footerlogo from '../../assets/footerlogo.png';
 import footerSketch from '../../assets/footer_sketch.webp';
@@ -49,11 +50,11 @@ export default function FooterSection() {
           <div className="footer-col">
             <h3 className="footer-col-title">Explore</h3>
             <ul className="footer-col-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#articles">Articles</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><a href="/#events">Events</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
+              <li><a href="/#articles">Articles</a></li>
             </ul>
           </div>
 

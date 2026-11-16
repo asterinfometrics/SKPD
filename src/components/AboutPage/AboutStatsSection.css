@@ -1,0 +1,434 @@
+/* AboutStatsSection.css - "A Legacy Measured in Generations" */
+
+.about-stats-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0px 24px 0px 24px;
+  box-sizing: border-box;
+}
+
+.about-stats-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Blueprint Styled Card */
+.about-stats-card {
+  position: relative;
+  background-color: #000739;
+  /* Blueprint subtle graph paper grid over 2-color linear gradient (1C3764 up, 000739 down) */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, #1C3764 0%, #000739 100%);
+  background-size: 36px 36px, 36px 36px, 100% 100%;
+  background-repeat: repeat, repeat, no-repeat;
+  border-radius: 28px;
+  padding: 64px 48px 56px 48px;
+  box-shadow: 0 20px 48px rgba(0, 7, 57, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.about-stats-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+/* White Pill Badge */
+.about-stats-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #071f4a;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.stats-badge-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #071f4a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.stats-badge-text {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Heading */
+.about-stats-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+/* Subtitle */
+.about-stats-subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 660px;
+}
+
+/* =========================================================
+   STATS GRID (4 COLUMNS WITH DIVIDERS)
+   ========================================================= */
+
+.about-stats-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Vertical divider between stats */
+.about-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.stat-number {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 BREAKPOINTS)
+   ========================================================= */
+
+/* 1. Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .about-stats-section {
+    padding: 60px 48px 100px 48px;
+  }
+
+  .about-stats-card {
+    padding: 80px 64px 72px 64px;
+    border-radius: 32px;
+  }
+
+  .about-stats-title {
+    font-size: 48px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 18px;
+    max-width: 760px;
+  }
+
+  .stat-number {
+    font-size: 64px;
+  }
+
+  .stat-label {
+    font-size: 12.5px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .about-stats-section {
+    padding: 48px 36px 88px 36px;
+  }
+
+  .about-stats-card {
+    padding: 72px 56px 64px 56px;
+  }
+
+  .about-stats-title {
+    font-size: 44px;
+  }
+
+  .stat-number {
+    font-size: 58px;
+  }
+}
+
+/* 3. Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .about-stats-section {
+    padding: 40px 24px 80px 24px;
+  }
+}
+
+/* 4. Laptop (1024px Small laptop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-stats-section {
+    padding: 36px 20px 68px 20px;
+  }
+
+  .about-stats-card {
+    padding: 56px 36px 48px 36px;
+    border-radius: 24px;
+  }
+
+  .about-stats-title {
+    font-size: 34px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 15px;
+  }
+
+  .stat-number {
+    font-size: 44px;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+  }
+}
+
+/* 5. Tablet (768px Tablet layout) */
+@media (min-width: 431px) and (max-width: 768px) {
+  .about-stats-section {
+    padding: 32px 16px 56px 16px;
+  }
+
+  .about-stats-card {
+    padding: 44px 28px 40px 28px;
+    border-radius: 20px;
+  }
+
+  .about-stats-header {
+    margin-bottom: 36px;
+  }
+
+  .about-stats-title {
+    font-size: 28px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 14px;
+  }
+
+  /* 2x2 Grid for Tablet */
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+  }
+
+  .about-stat-item:nth-child(odd)::after {
+    display: block;
+  }
+
+  .about-stat-item:nth-child(even)::after {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 40px;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+  }
+}
+
+/* 6. Mobile Large (430px Large mobile) */
+@media (min-width: 376px) and (max-width: 430px) {
+  .about-stats-section {
+    padding: 24px 12px 44px 12px;
+  }
+
+  .about-stats-card {
+    padding: 36px 20px 32px 20px;
+    border-radius: 18px;
+    background-size: 28px 28px, 28px 28px, 100% 100%;
+  }
+
+  .about-stats-header {
+    margin-bottom: 28px;
+  }
+
+  .about-stats-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* 2x2 Grid on Mobile */
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+
+  .about-stat-item {
+    padding: 0 10px;
+  }
+
+  .about-stat-item:nth-child(odd)::after {
+    display: block;
+  }
+
+  .about-stat-item:nth-child(even)::after {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 9.5px;
+  }
+}
+
+/* 7. Mobile (375px Standard mobile) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .about-stats-section {
+    padding: 20px 10px 40px 10px;
+  }
+
+  .about-stats-card {
+    padding: 32px 16px 28px 16px;
+    border-radius: 16px;
+    background-size: 24px 24px, 24px 24px, 100% 100%;
+  }
+
+  .about-stats-header {
+    margin-bottom: 24px;
+  }
+
+  .about-stats-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 12.5px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+
+  .about-stat-item {
+    padding: 0 8px;
+  }
+
+  .about-stat-item:nth-child(odd)::after {
+    display: block;
+  }
+
+  .about-stat-item:nth-child(even)::after {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .about-stats-section {
+    padding: 16px 8px 36px 8px;
+  }
+
+  .about-stats-card {
+    padding: 28px 12px 24px 12px;
+    border-radius: 14px;
+    background-size: 20px 20px, 20px 20px, 100% 100%;
+  }
+
+  .about-stats-badge {
+    padding: 6px 14px;
+    margin-bottom: 14px;
+  }
+
+  .stats-badge-text {
+    font-size: 9.5px;
+  }
+
+  .about-stats-title {
+    font-size: 20px;
+  }
+
+  .about-stats-subtitle {
+    font-size: 11.5px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .about-stat-item::after {
+    display: none !important;
+  }
+
+  .stat-number {
+    font-size: 28px;
+    margin-bottom: 2px;
+  }
+
+  .stat-label {
+    font-size: 8.5px;
+  }
+}

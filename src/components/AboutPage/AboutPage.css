@@ -1,0 +1,18 @@
+/* AboutPage.css */
+
+.about-page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.about-main-content {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}

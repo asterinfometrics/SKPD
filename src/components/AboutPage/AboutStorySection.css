@@ -1,0 +1,367 @@
+/* AboutStorySection.css - "Where It All Comes Together" */
+
+.about-story-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 72px 48px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.about-story-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 56px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MEDIA FRAME
+   ========================================================= */
+
+.about-story-media {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-story-frame {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: #f1f5f9;
+  aspect-ratio: 4 / 3.08;
+}
+
+.about-story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-story-frame:hover .about-story-img {
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   CONTENT COLUMN
+   ========================================================= */
+
+.about-story-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+/* Pill Badge */
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #071f4a;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(7, 31, 74, 0.12);
+}
+
+.about-badge-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.about-badge-text {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Heading */
+.about-story-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #333333;
+  margin: 0 0 24px 0;
+}
+
+/* Paragraphs */
+.about-story-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.about-story-p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333333;
+  margin: 0;
+}
+
+.about-story-p.lead {
+  font-size: 18px;
+  color: #333333;
+  font-family: var(--font-body);
+}
+
+/* Tagline */
+.about-story-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #032153;
+  text-transform: uppercase;
+  padding-top: 10px;
+  border-top: 1px solid rgba(7, 31, 74, 0.1);
+  width: 100%;
+}
+
+.tagline-bullet {
+  color: #888888;
+  font-size: 27px;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 SIZES)
+   ========================================================= */
+
+
+/* 1. Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .about-story-section {
+    padding: 96px 64px;
+  }
+
+  .about-story-container {
+    gap: 72px;
+  }
+
+  .about-story-frame {
+    border-radius: 28px;
+  }
+
+  .about-story-title {
+    font-size: 48px;
+  }
+
+  .about-story-p {
+    font-size: 17.5px;
+  }
+
+  .about-story-p.lead {
+    font-size: 18.5px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .about-story-section {
+    padding: 80px 48px;
+  }
+
+  .about-story-container {
+    gap: 60px;
+  }
+
+  .about-story-title {
+    font-size: 44px;
+  }
+}
+
+/* 3. Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .about-story-section {
+    padding: 68px 36px;
+  }
+
+  .about-story-container {
+    gap: 48px;
+  }
+
+  .about-story-title {
+    font-size: 38px;
+  }
+}
+
+/* 4. Laptop (1024px Small laptop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-story-section {
+    padding: 56px 28px;
+  }
+
+  .about-story-container {
+    gap: 36px;
+  }
+
+  .about-story-title {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .about-story-p {
+    font-size: 14.5px;
+  }
+
+  .about-story-frame {
+    border-radius: 20px;
+  }
+}
+
+/* 5. Tablet (768px Tablet layout) */
+@media (min-width: 431px) and (max-width: 768px) {
+  .about-story-section {
+    padding: 48px 24px;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-story-frame {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+  }
+
+  .about-story-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+}
+
+/* 6. Mobile Large (430px Large mobile) */
+@media (min-width: 376px) and (max-width: 430px) {
+  .about-story-section {
+    padding: 36px 16px;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-story-frame {
+    border-radius: 16px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-story-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .about-story-p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .about-story-tagline {
+    font-size: 11px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+/* 7. Mobile (375px Standard mobile) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .about-story-section {
+    padding: 32px 16px;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-story-frame {
+    border-radius: 14px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-story-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .about-story-p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .about-story-tagline {
+    font-size: 10.5px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .about-story-section {
+    padding: 28px 12px;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-story-frame {
+    border-radius: 12px;
+  }
+
+  .about-badge {
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+
+  .about-badge-text {
+    font-size: 10px;
+  }
+
+  .about-story-title {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+
+  .about-story-p {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .about-story-tagline {
+    font-size: 9.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .tagline-bullet {
+    display: none;
+  }
+}

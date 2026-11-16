@@ -1,0 +1,334 @@
+/* AboutLeadershipSection.css - "The People Who Keep the Connection Alive" */
+
+.about-leadership-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 30px 24px 30px 24px;
+  box-sizing: border-box;
+}
+
+.about-leadership-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.about-leadership-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-leadership-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin: 0;
+}
+
+.about-leadership-title .highlight {
+  color: #032153;
+}
+
+/* =========================================================
+   LEADERSHIP GRID (4 COLUMNS)
+   ========================================================= */
+
+.about-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+.leadership-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease;
+}
+
+.leadership-card:hover {
+  transform: translateY(-4px);
+}
+
+.leadership-card-media {
+  width: 100%;
+  aspect-ratio: 1 / 1.02;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  box-shadow: 0 10px 28px rgba(11, 34, 78, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 16px;
+  transition: box-shadow 0.35s ease;
+}
+
+.leadership-card:hover .leadership-card-media {
+  box-shadow: 0 16px 36px rgba(7, 31, 74, 0.14);
+}
+
+.leadership-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.leadership-card:hover .leadership-card-img {
+  transform: scale(1.03);
+}
+
+.leadership-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.leadership-name {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #121826;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.015em;
+}
+
+.leadership-role {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 BREAKPOINTS)
+   ========================================================= */
+
+/* 1. Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+
+  .about-leadership-title {
+    font-size: 39px;
+  }
+
+  .about-leadership-grid {
+    gap: 36px;
+  }
+
+  .leadership-card-media {
+    border-radius: 24px;
+  }
+
+  .leadership-name {
+    font-size: 20px;
+  }
+
+  .leadership-role {
+    font-size: 14.5px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+
+  .about-leadership-title {
+    font-size: 39px;
+  }
+
+  .about-leadership-grid {
+    gap: 32px;
+  }
+}
+
+/* 3. Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+  .about-leadership-grid {
+    gap: 28px;
+  }
+}
+
+/* 4. Laptop (1024px Small laptop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .about-leadership-header {
+    margin-bottom: 40px;
+  }
+
+  .about-leadership-title {
+    font-size: 34px;
+  }
+
+  .about-leadership-grid {
+    gap: 20px;
+  }
+
+  .leadership-card-media {
+    border-radius: 16px;
+  }
+
+  .leadership-name {
+    font-size: 16.5px;
+  }
+
+  .leadership-role {
+    font-size: 12.5px;
+  }
+}
+
+/* 5. Tablet (768px Tablet layout) */
+@media (min-width: 431px) and (max-width: 768px) {
+  .about-leadership-section {
+    padding: 32px 16px 64px 16px;
+  }
+
+  .about-leadership-header {
+    margin-bottom: 32px;
+  }
+
+  .about-leadership-title {
+    font-size: 30px;
+  }
+
+  /* 2x2 Grid for Tablet */
+  .about-leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .leadership-card-media {
+    border-radius: 16px;
+  }
+
+  .leadership-name {
+    font-size: 17px;
+  }
+
+  .leadership-role {
+    font-size: 13px;
+  }
+}
+
+/* 6. Mobile Large (430px Large mobile) */
+@media (min-width: 376px) and (max-width: 430px) {
+  .about-leadership-section {
+    padding: 24px 16px 52px 16px;
+  }
+
+  .about-leadership-header {
+    margin-bottom: 24px;
+  }
+
+  .about-leadership-title {
+    font-size: 25px;
+  }
+
+  /* 2 columns on Mobile Large */
+  .about-leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .leadership-card-media {
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+
+  .leadership-name {
+    font-size: 15px;
+  }
+
+  .leadership-role {
+    font-size: 12px;
+  }
+}
+
+/* 7. Mobile (375px Standard mobile) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .about-leadership-section {
+    padding: 20px 14px 44px 14px;
+  }
+
+  .about-leadership-header {
+    margin-bottom: 20px;
+  }
+
+  .about-leadership-title {
+    font-size: 23px;
+  }
+
+  .about-leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .leadership-card-media {
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+
+  .leadership-name {
+    font-size: 14.5px;
+  }
+
+  .leadership-role {
+    font-size: 11.5px;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .about-leadership-section {
+    padding: 16px 12px 36px 12px;
+  }
+
+  .about-leadership-header {
+    margin-bottom: 16px;
+  }
+
+  .about-leadership-title {
+    font-size: 21px;
+  }
+
+  .about-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .leadership-card {
+    align-items: center;
+  }
+
+  .leadership-card-media {
+    max-width: 220px;
+    border-radius: 12px;
+  }
+
+  .leadership-card-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .leadership-name {
+    font-size: 16px;
+  }
+
+  .leadership-role {
+    font-size: 12px;
+  }
+}

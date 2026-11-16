@@ -1,0 +1,602 @@
+/* AboutJourneySection.css - "A Legacy Built Across Generations" */
+
+.about-journey-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 75px 5%;
+  box-sizing: border-box;
+}
+
+.about-journey-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.about-journey-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 38px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pill Badge matching reference */
+.journey-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+}
+
+.journey-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #071f4a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.journey-badge-text {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1f2937;
+  text-transform: uppercase;
+}
+
+/* Section Title */
+.about-journey-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin: 0 0 14px 0;
+}
+
+.journey-blue {
+  color: #071f4a;
+}
+
+.about-journey-subtitle {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #556274;
+  margin: 0;
+  max-width: 680px;
+}
+
+/* =========================================================
+   TIMELINE BODY (2-COLUMN STRETCH LAYOUT)
+   ========================================================= */
+
+.about-journey-body {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 56px;
+  align-items: stretch;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Left: Year List spanning the exact full height */
+.journey-year-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid #e5e7eb;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.journey-year-btn {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 28px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+  user-select: none;
+  min-height: 50px;
+}
+
+.journey-year-btn:last-child {
+  border-bottom: none;
+}
+
+/* Left Accent Line for Active Year */
+.journey-year-indicator {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 3.5px;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+
+.journey-year-btn.active .journey-year-indicator {
+  background-color: #032153;
+}
+
+/* Year Text */
+.journey-year-text {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: color 0.25s ease, transform 0.25s ease;
+  letter-spacing: -0.02em;
+}
+
+.journey-year-btn:hover .journey-year-text {
+  color: #333333;
+}
+
+.journey-year-btn.active .journey-year-text {
+  color: #333333;
+  font-weight: 800;
+}
+
+/* Chevron */
+.journey-year-chevron {
+  display: flex;
+  align-items: center;
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+}
+
+.journey-year-btn:hover .journey-year-chevron {
+  color: #333333;
+}
+
+.journey-year-btn.active .journey-year-chevron {
+  color: #333333;
+}
+
+/* =========================================================
+   RIGHT: DETAIL CARD
+   ========================================================= */
+
+.journey-detail-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  justify-content: flex-start;
+}
+
+.journey-card-media {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(11, 34, 78, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: #f1f5f9;
+  aspect-ratio: 16 / 8.6;
+  margin-bottom: 16px;
+}
+
+.journey-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: journeyImgFade 0.4s ease-out;
+}
+
+@keyframes journeyImgFade {
+  from {
+    opacity: 0.6;
+    transform: scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.journey-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.journey-card-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: #121826;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.journey-card-desc {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #556274;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 BREAKPOINTS)
+   ========================================================= */
+
+/* 1. Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .about-journey-title {
+    font-size: 48px;
+  }
+
+  .about-journey-body {
+    gap: 72px;
+  }
+
+  .journey-year-text {
+    font-size: 34px;
+  }
+
+  .journey-card-title {
+    font-size: 26px;
+  }
+
+  .journey-card-desc {
+    font-size: 16px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .about-journey-title {
+    font-size: 44px;
+  }
+
+  .about-journey-body {
+    gap: 64px;
+  }
+}
+
+/* 3. Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .about-journey-body {
+    gap: 52px;
+  }
+}
+
+/* 4. Laptop (1024px Small laptop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-journey-header {
+    margin-bottom: 40px;
+  }
+
+  .about-journey-title {
+    font-size: 34px;
+  }
+
+  .about-journey-body {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 36px;
+  }
+
+  .journey-year-text {
+    font-size: 24px;
+  }
+
+  .journey-year-btn {
+    padding: 0 16px 0 20px;
+    min-height: 54px;
+  }
+
+  .journey-card-title {
+    font-size: 20px;
+  }
+
+  .journey-card-desc {
+    font-size: 14px;
+  }
+}
+
+/* 5. Tablet (768px Tablet layout) */
+@media (min-width: 431px) and (max-width: 768px) {
+  bout-journey-header {
+    margin-bottom: 32px;
+  }
+
+  .about-journey-title {
+    font-size: 30px;
+  }
+
+  .about-journey-subtitle {
+    font-size: 15px;
+  }
+
+  .about-journey-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Horizontal Year Tabs Bar on Tablet */
+  .journey-year-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 4px;
+    gap: 8px;
+    height: auto;
+  }
+
+  .journey-year-btn {
+    flex: none;
+    border-bottom: none;
+    padding: 10px 16px;
+    min-height: auto;
+  }
+
+  .journey-year-indicator {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+  }
+
+  .journey-year-chevron {
+    display: none;
+  }
+
+  .journey-year-text {
+    font-size: 22px;
+  }
+
+  .journey-card-media {
+    border-radius: 16px;
+    aspect-ratio: 16 / 9.5;
+    margin-bottom: 18px;
+  }
+
+  .journey-card-title {
+    font-size: 20px;
+  }
+
+  .journey-card-desc {
+    font-size: 14.5px;
+  }
+}
+
+/* 6. Mobile Large (430px Large mobile) */
+@media (min-width: 376px) and (max-width: 430px) {
+  .about-journey-section {
+    padding: 44px 16px;
+  }
+
+  .about-journey-header {
+    margin-bottom: 28px;
+  }
+
+  .about-journey-title {
+    font-size: 25px;
+  }
+
+  .about-journey-subtitle {
+    font-size: 13.5px;
+  }
+
+  .about-journey-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .journey-year-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2px;
+    gap: 6px;
+    height: auto;
+  }
+
+  .journey-year-btn {
+    flex: none;
+    padding: 8px 12px;
+    min-height: auto;
+  }
+
+  .journey-year-text {
+    font-size: 19px;
+  }
+
+  .journey-year-indicator {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+  }
+
+  .journey-year-chevron {
+    display: none;
+  }
+
+  .journey-card-media {
+    border-radius: 14px;
+    aspect-ratio: 16 / 9.5;
+    margin-bottom: 14px;
+  }
+
+  .journey-card-title {
+    font-size: 19px;
+  }
+
+  .journey-card-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+}
+
+/* 7. Mobile (375px Standard mobile) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .about-journey-section {
+    padding: 40px 16px;
+  }
+
+  .about-journey-header {
+    margin-bottom: 24px;
+  }
+
+  .about-journey-title {
+    font-size: 23px;
+  }
+
+  .about-journey-subtitle {
+    font-size: 13px;
+  }
+
+  .about-journey-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .journey-year-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 2px;
+    gap: 4px;
+    height: auto;
+  }
+
+  .journey-year-btn {
+    flex: none;
+    padding: 6px 10px;
+    min-height: auto;
+  }
+
+  .journey-year-text {
+    font-size: 17px;
+  }
+
+  .journey-year-indicator {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+  }
+
+  .journey-year-chevron {
+    display: none;
+  }
+
+  .journey-card-media {
+    border-radius: 12px;
+    aspect-ratio: 16 / 9.5;
+    margin-bottom: 12px;
+  }
+
+  .journey-card-title {
+    font-size: 18px;
+  }
+
+  .journey-card-desc {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .about-journey-section {
+    padding: 36px 12px;
+  }
+
+  .about-journey-header {
+    margin-bottom: 20px;
+  }
+
+  .about-journey-title {
+    font-size: 21px;
+  }
+
+  .about-journey-subtitle {
+    font-size: 12px;
+  }
+
+  .about-journey-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .journey-year-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid #e2e8f0;
+    gap: 2px;
+    height: auto;
+  }
+
+  .journey-year-btn {
+    flex: none;
+    padding: 5px 8px;
+    min-height: auto;
+  }
+
+  .journey-year-text {
+    font-size: 15px;
+  }
+
+  .journey-year-indicator {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: -2px;
+    width: 100%;
+    height: 2.5px;
+  }
+
+  .journey-year-chevron {
+    display: none;
+  }
+
+  .journey-card-media {
+    border-radius: 10px;
+    aspect-ratio: 16 / 9.5;
+    margin-bottom: 10px;
+  }
+
+  .journey-card-title {
+    font-size: 16.5px;
+  }
+
+  .journey-card-desc {
+    font-size: 12px;
+  }
+}
