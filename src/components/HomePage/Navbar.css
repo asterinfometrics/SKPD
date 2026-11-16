@@ -1,12 +1,80 @@
 /* Exact SKPD Navbar Styles matching screenshot media_1794475772654_7b0be563.png */
 
 .skpd-header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: #ffffff;
-  z-index: 100;
-  border-bottom: none;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
   box-sizing: border-box;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              padding 0.3s ease;
+}
+
+.skpd-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 16px -2px rgba(11, 34, 78, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03);
+  padding: 0 24px;
+}
+
+.skpd-header.is-scrolled .skpd-nav-container {
+  height: 52px;
+  min-height: 52px;
+}
+
+.skpd-header.is-scrolled .skpd-logo-anchor {
+  margin-bottom: 0;
+  height: 42px;
+}
+
+.skpd-header.is-scrolled .crest-logo-wrapper {
+  margin-top: 0 !important;
+  width: 42px !important;
+  height: 42px !important;
+  --logo-w: 42px !important;
+  --logo-h: 42px !important;
+  transform: none !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skpd-header.is-scrolled .skpd-crest-link:hover .crest-logo-wrapper {
+  transform: scale(1.08) !important;
+}
+
+.skpd-header.is-scrolled .skpd-nav-link {
+  font-size: 14.5px;
+  padding: 4px 0;
+}
+
+.crest-logo-wrapper {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scroll Reading Progress Bar */
+.skpd-scroll-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 105;
+}
+
+.skpd-scroll-progress-indicator {
+  height: 100%;
+  background: linear-gradient(90deg, #1C3764 0%, #2563EB 50%, #000739 100%);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  transition: width 0.08s linear;
 }
 
 .skpd-nav-container {
@@ -68,6 +136,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: -58px;
+  transition: margin-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skpd-crest-link {
@@ -273,6 +343,29 @@
 @media (max-width: 768px) {
   .skpd-header {
     padding: 8px 16px;
+  }
+
+  .skpd-header.is-scrolled {
+    padding: 0 16px;
+  }
+
+  .skpd-header.is-scrolled .skpd-nav-container {
+    height: 48px;
+    min-height: 48px;
+  }
+
+  .skpd-header.is-scrolled .skpd-logo-anchor {
+    transform: none;
+    margin-bottom: 0;
+    height: 38px;
+  }
+
+  .skpd-header.is-scrolled .crest-logo-wrapper {
+    width: 38px !important;
+    height: 38px !important;
+    --logo-w: 38px !important;
+    --logo-h: 38px !important;
+    margin-top: 0 !important;
   }
 
   .skpd-nav-left,

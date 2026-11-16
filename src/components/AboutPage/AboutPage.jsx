@@ -8,6 +8,7 @@ import JoinBannerSection from '../HomePage/JoinBannerSection';
 import FooterSection from '../HomePage/FooterSection';
 import './AboutPage.css';
 import { HeroSection } from '../HomePage';
+import AboutContactSection from './AboutContact';
 
 export default function AboutPage() {
   useEffect(() => {
@@ -37,6 +38,9 @@ export default function AboutPage() {
 
         {/* Call to Action Banner */}
         <JoinBannerSection />
+
+
+        <AboutContactSection />
 
       </main>
 

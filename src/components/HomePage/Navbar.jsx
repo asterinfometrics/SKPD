@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CrestLogo from './CrestLogo';
 import './Navbar.css';
 
 export default function Navbar({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
   const currentPath = location?.pathname || '/';
   const effectiveActive = activePage || (currentPath === '/about' ? 'about' : 'home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      setIsScrolled(scrollY > 20);
+
+      const winHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const totalScroll = docHeight - winHeight;
+
+      if (totalScroll > 0) {
+        const percent = Math.min(100, Math.max(0, (scrollY / totalScroll) * 100));
+        setScrollProgress(percent);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const leftNavItems = [
     { label: 'Home', to: '/', id: 'home' },
@@ -23,7 +46,15 @@ export default function Navbar({ activePage }) {
   ];
 
   return (
-    <header className="skpd-header">
+    <header className={`skpd-header ${isScrolled ? 'is-scrolled' : ''}`}>
+      {/* Scroll Progress Bar at the bottom of header */}
+      <div className="skpd-scroll-progress-track" aria-hidden="true">
+        <div
+          className="skpd-scroll-progress-indicator"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       <div className="skpd-nav-container">
         {/* Left Navigation Links */}
         <nav className="skpd-nav-group skpd-nav-left" aria-label="Main Navigation Left">

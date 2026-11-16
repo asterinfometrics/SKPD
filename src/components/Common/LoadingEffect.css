@@ -1,0 +1,157 @@
+/* =========================================================
+   SKPD Clean Logo Loading Effect Styles (Logo Only)
+   ========================================================= */
+
+/* Top Slim Route Loading Line */
+.skpd-top-loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 100000;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.skpd-top-loader-container.is-loading {
+  opacity: 1;
+}
+
+.skpd-top-loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1C3764 0%, #2563EB 50%, #60A5FA 100%);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.7), 0 0 5px rgba(28, 55, 100, 0.5);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.skpd-top-loader-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+  box-shadow: 0 0 12px #60A5FA;
+}
+
+/* =========================================================
+   Logo-Only Loading Overlay (Initial Load & Route Navigation)
+   ========================================================= */
+.skpd-logo-loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skpd-logo-loader-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+/* Route transition variant (slightly faster fade and translucent) */
+.skpd-logo-loader-overlay.route-mode {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.skpd-logo-loader-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+}
+
+/* Subtle Breathing Aura Ring */
+.skpd-logo-loader-aura {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(28, 55, 100, 0.12) 0%, rgba(37, 99, 235, 0.05) 55%, transparent 75%);
+  animation: auraPulse 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+/* Crest Logo Pulse Animation */
+.skpd-logo-loader-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 6px 16px rgba(11, 34, 78, 0.16));
+  animation: logoBreathe 1.8s ease-in-out infinite;
+}
+
+@keyframes logoBreathe {
+  0%, 100% {
+    transform: scale(0.96) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-3px);
+  }
+}
+
+/* Spin Ring Accent around Logo */
+.skpd-logo-loader-spin-ring {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #1C3764;
+  border-right-color: rgba(37, 99, 235, 0.4);
+  animation: logoSpin 1.4s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes logoSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .skpd-logo-loader-content {
+    width: 110px;
+    height: 110px;
+  }
+  .skpd-logo-loader-img {
+    width: 80px;
+    height: 80px;
+  }
+}
