@@ -1,0 +1,447 @@
+/* Beyond the Classroom - Arched Photo Carousel Section */
+
+.beyond-classroom-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background-color: #ffffff;
+  /* Blueprint-style graph paper grid lines matching exact UI design */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center top;
+  overflow: hidden;
+  contain: paint;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+
+  /* Default Variables (Desktop 1280px) */
+  --angle-step: 9.4deg;
+  --arc-radius: 1140px;
+  --card-width: 160px;
+  --card-height: 182px;
+  --arc-top: 32px;
+  --section-height: 540px;
+  --content-bottom: 50px;
+  --arc-duration: 28s;
+
+  height: var(--section-height);
+  min-height: var(--section-height);
+}
+
+/* =========================================================
+   ARCH CAROUSEL STAGE
+   ========================================================= */
+
+.beyond-arc-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  contain: paint;
+}
+
+/* Center Origin Point from which the Arc fans out */
+.beyond-arc-origin {
+  position: absolute;
+  top: var(--arc-top);
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+/* Individual Card in the Arc with continuous running motion */
+.beyond-arc-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin-left: calc(var(--card-width) / -2);
+  transform-origin: 50% var(--arc-radius);
+  pointer-events: auto;
+  will-change: transform, opacity;
+  animation: arcMarquee var(--arc-duration, 28s) linear infinite;
+  animation-play-state: running;
+}
+
+/* Smooth continuous running marquee along the arch curve */
+@keyframes arcMarquee {
+  0% {
+    transform: rotate(calc(var(--angle-step) * -4.5));
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(calc(var(--angle-step) * 4.5));
+    opacity: 0;
+  }
+}
+
+
+.beyond-card-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.beyond-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.5s ease;
+}
+
+/* Card Hover Elevation */
+.beyond-arc-card:hover .beyond-card-frame {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(11, 34, 78, 0.18);
+}
+
+
+
+/* =========================================================
+   CENTER TYPOGRAPHY CONTENT
+   ========================================================= */
+
+.beyond-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: var(--content-bottom);
+  max-width: 680px;
+}
+
+/* Dark Navy Pill Badge */
+.beyond-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #071f4a;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(7, 31, 74, 0.15);
+}
+
+.beyond-badge-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.beyond-badge-text {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Section Title */
+.beyond-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin-bottom: 14px;
+}
+
+.beyond-highlight {
+  color: #071f4a;
+  font-family: var(--font-heading);
+}
+
+/* Subtitle */
+.beyond-subtitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #556274;
+  max-width: 520px;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 BREAKPOINTS)
+   ========================================================= */
+
+/* 1. Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .beyond-classroom-section {
+    --angle-step: 9.0deg;
+    --arc-radius: 1400px;
+    --card-width: 195px;
+    --card-height: 220px;
+    --arc-top: 40px;
+    --section-height: 620px;
+    --content-bottom: 58px;
+    --arc-duration: 32s;
+  }
+
+  .beyond-badge-text {
+    font-size: 12.5px;
+  }
+
+  .beyond-title {
+    font-size: 50px;
+  }
+
+  .beyond-subtitle {
+    font-size: 20px;
+    max-width: 600px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .beyond-classroom-section {
+    --angle-step: 9.2deg;
+    --arc-radius: 1240px;
+    --card-width: 172px;
+    --card-height: 196px;
+    --arc-top: 36px;
+    --section-height: 560px;
+    --content-bottom: 52px;
+    --arc-duration: 28s;
+  }
+
+  .beyond-title {
+    font-size: 46px;
+  }
+
+  .beyond-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* 3. Desktop (1025px - 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .beyond-classroom-section {
+    --angle-step: 9.4deg;
+    --arc-radius: 1140px;
+    --card-width: 160px;
+    --card-height: 182px;
+    --arc-top: 32px;
+    --section-height: 540px;
+    --content-bottom: 50px;
+    --arc-duration: 28s;
+  }
+
+  .beyond-title {
+    font-size: 42px;
+  }
+
+  .beyond-subtitle {
+    font-size: 18px;
+  }
+}
+
+/* 4. Laptop (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .beyond-classroom-section {
+    --angle-step: 10.0deg;
+    --arc-radius: 960px;
+    --card-width: 138px;
+    --card-height: 158px;
+    --arc-top: 28px;
+    --section-height: 480px;
+    --content-bottom: 42px;
+    --arc-duration: 26s;
+  }
+
+  .beyond-title {
+    font-size: 36px;
+  }
+
+  .beyond-subtitle {
+    font-size: 16.5px;
+  }
+}
+
+/* 5. Tablet (431px - 768px) */
+@media (min-width: 431px) and (max-width: 768px) {
+  .beyond-classroom-section {
+    --angle-step: 12.0deg;
+    --arc-radius: 720px;
+    --card-width: 115px;
+    --card-height: 132px;
+    --arc-top: 24px;
+    --section-height: 440px;
+    --content-bottom: 36px;
+    --arc-duration: 24s;
+  }
+
+  .beyond-badge {
+    padding: 10px 20px;
+    margin-bottom: 12px;
+  }
+
+  .beyond-badge-text {
+    font-size: 11px;
+  }
+
+  .beyond-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .beyond-subtitle {
+    font-size: 15px;
+    max-width: 460px;
+  }
+}
+
+/* 6. Mobile Large (376px - 430px) */
+@media (min-width: 376px) and (max-width: 430px) {
+  .beyond-classroom-section {
+    --angle-step: 14.0deg;
+    --arc-radius: 460px;
+    --card-width: 90px;
+    --card-height: 105px;
+    --arc-top: 18px;
+    --section-height: 380px;
+    --content-bottom: 28px;
+    --arc-duration: 22s;
+    background-size: 36px 36px;
+  }
+
+  .beyond-card-frame {
+    border-radius: 14px;
+  }
+
+  .beyond-badge {
+    padding: 8px 16px;
+    margin-bottom: 10px;
+  }
+
+  .beyond-badge-text {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .beyond-title {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .beyond-subtitle {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+}
+
+/* 7. Mobile (321px - 375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .beyond-classroom-section {
+    --angle-step: 15.0deg;
+    --arc-radius: 400px;
+    --card-width: 82px;
+    --card-height: 96px;
+    --arc-top: 16px;
+    --section-height: 360px;
+    --content-bottom: 24px;
+    --arc-duration: 20s;
+    background-size: 32px 32px;
+  }
+
+  .beyond-card-frame {
+    border-radius: 12px;
+  }
+
+  .beyond-badge {
+    padding: 6px 14px;
+    margin-bottom: 8px;
+  }
+
+  .beyond-badge-text {
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .beyond-title {
+    font-size: 23px;
+    margin-bottom: 6px;
+  }
+
+  .beyond-subtitle {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .beyond-classroom-section {
+    --angle-step: 16.0deg;
+    --arc-radius: 340px;
+    --card-width: 72px;
+    --card-height: 84px;
+    --arc-top: 14px;
+    --section-height: 340px;
+    --content-bottom: 20px;
+    --arc-duration: 18s;
+    background-size: 28px 28px;
+  }
+
+  .beyond-card-frame {
+    border-radius: 10px;
+  }
+
+  .beyond-badge {
+    padding: 5px 12px;
+    margin-bottom: 6px;
+  }
+
+  .beyond-badge-text {
+    font-size: 9px;
+  }
+
+  .beyond-title {
+    font-size: 21px;
+    margin-bottom: 6px;
+  }
+
+  .beyond-subtitle {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+}
+
+/* Accessibility: reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .beyond-arc-card {
+    animation: none;
+    transform: rotate(var(--card-static-angle, 0deg));
+    opacity: 1;
+  }
+}

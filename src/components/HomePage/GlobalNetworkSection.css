@@ -1,0 +1,192 @@
+/* Global Network Section - "Wherever Life Takes You, Stay Connected." */
+
+.global-network-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding: 0px 24px 0px 24px;
+  box-sizing: border-box;
+}
+
+.global-network-container {
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.global-network-card {
+  position: relative;
+  background-color: #F5F6F8;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 68px;
+}
+
+.global-network-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.global-network-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin-bottom: 16px;
+}
+
+.global-highlight {
+  color: #032153;
+}
+
+.global-network-subtitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 32px;
+  max-width: 620px;
+}
+
+.global-cta-wrapper {
+  margin-bottom: 36px;
+}
+
+.global-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #032153;
+  color: #ffffff;
+  padding: 10px 24px 10px 10px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(3, 33, 83, 0.25);
+}
+
+.global-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(3, 33, 83, 0.35);
+}
+
+.global-cta-icon {
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #032153;
+}
+
+.global-cta-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Map Graphic */
+.global-map-wrapper {
+  width: 100%;
+  position: relative;
+  line-height: 0;
+}
+
+.global-map-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+@media (min-width: 1920px) {
+  .global-network-card {
+    border-radius: 32px;
+    padding-top: 80px;
+  }
+  .global-network-title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .global-network-card {
+    padding-top: 56px;
+  }
+  .global-network-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .global-network-section {
+    padding: 30px 16px 50px 16px;
+  }
+  .global-network-card {
+    border-radius: 20px;
+    padding-top: 44px;
+  }
+  .global-network-title {
+    font-size: 30px;
+  }
+  .global-network-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 430px) {
+  .global-network-card {
+    padding-top: 36px;
+    border-radius: 18px;
+  }
+  .global-network-title {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+  .global-network-subtitle {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .global-cta-btn {
+    font-size: 14px;
+    padding: 8px 18px 8px 8px;
+  }
+  .global-cta-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 375px) {
+  .global-network-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 320px) {
+  .global-network-title {
+    font-size: 20px;
+  }
+}
+

@@ -1,0 +1,364 @@
+/* Hero Card & Notch Styling matching exact reference screenshots */
+
+.skpd-hero-wrapper {
+  background-color: #ffffff;
+  padding: 0 16px 0 16px;
+  width: 100%;
+}
+
+/* Contained Hero Card with soft cool-grey background and rounded top */
+.skpd-hero-card {
+  margin: 0 auto;
+  background-color: #e6e9ee;
+  border-radius: 24px 24px 0 0;
+  position: relative;
+  overflow: hidden;
+  padding-top: 75px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Curved Notch Scoop blending with white Navbar above */
+.hero-notch-cutout {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 216px;
+  height: 62px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-notch-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Inner Content */
+.skpd-hero-inner {
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.skpd-hero-title {
+  font-family: var(--font-heading);
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #333333;
+  margin-top: 62px;
+  margin-bottom: 16px;
+}
+
+.skpd-hero-highlight {
+  color: #032153;
+  font-family: var(--font-heading);
+}
+
+.skpd-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #333333;
+  max-width: 620px;
+  margin-bottom: 26px;
+}
+
+/* CTA Button */
+.skpd-hero-cta-wrapper {
+  margin-bottom: 38px;
+  margin-top: 15px;
+}
+
+.skpd-hero-cta {
+  display: inline-flex;
+  gap: 10px;
+  background-color: #032153;
+  color: #ffffff;
+  padding: 8px 24px 8px 8px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  align-items: center;
+}
+
+.cta-icon-badge {
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b224e;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.cta-text {
+  font-family: var(--font-body);
+  font-size: 18px;
+}
+
+/* Panoramic Building Image */
+.skpd-hero-banner-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.skpd-hero-banner-frame {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.skpd-hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (Hero Section)
+   ========================================================= */
+
+/* Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .skpd-hero-wrapper {
+    padding: 0 32px 0 32px;
+  }
+
+  .skpd-hero-card {
+    border-radius: 32px 32px 0 0;
+    padding-top: 68px;
+    padding-bottom: 0;
+  }
+
+  .hero-notch-cutout {
+    width: 170px;
+    height: 40px;
+  }
+
+  .skpd-hero-title {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 20px;
+    max-width: 720px;
+    margin-bottom: 34px;
+    font-family: var(--font-body);
+  }
+}
+
+/* Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .skpd-hero-wrapper {
+    padding: 0 24px 0 24px;
+  }
+
+  .skpd-hero-card {
+    border-radius: 28px 28px 0 0;
+    padding-bottom: 0;
+  }
+
+  .skpd-hero-title {
+    font-size: 54px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 20px;
+    font-family: var(--font-body);
+  }
+}
+
+/* Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+  .skpd-hero-title {
+    font-size: 48px;
+  }
+}
+
+/* Laptop (1024px Small laptop layout) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-notch-cutout {
+    width: 184px;
+    height: 42px;
+  }
+
+  .skpd-hero-card {
+    padding-top: 50px;
+    padding-bottom: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .skpd-hero-title {
+    font-size: 40px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 20px;
+    max-width: 520px;
+    font-family: var(--font-body);
+  }
+}
+
+/* Tablet (768px Tablet layout) */
+@media (max-width: 768px) {
+  .skpd-hero-wrapper {
+    padding: 0 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .skpd-hero-card {
+    padding-top: 40px;
+    padding-bottom: 0;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .hero-notch-cutout {
+    display: none;
+    /* Mobile view uses clean flat header line */
+  }
+
+  .skpd-hero-title {
+    font-size: 34px;
+    margin-top: 12px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: var(--font-body);
+  }
+}
+
+/* Mobile Large (430px Large mobile) */
+@media (max-width: 430px) {
+  .skpd-hero-wrapper {
+    padding: 0 16px;
+  }
+
+  .skpd-hero-title {
+    font-size: 27px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+
+  .skpd-hero-cta {
+    padding: 8px 18px 8px 8px;
+  }
+
+  .cta-icon-badge {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cta-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (375px Standard mobile) */
+@media (max-width: 375px) {
+  .skpd-hero-wrapper {
+    padding: 0 14px;
+  }
+
+  .skpd-hero-card {
+    padding-top: 32px;
+    padding-bottom: 0;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .skpd-hero-title {
+    font-size: 24px;
+    margin-top: 12px;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 13.5px;
+    margin-bottom: 20px;
+  }
+
+  .cta-icon-badge {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cta-text {
+    font-size: 14.5px;
+  }
+}
+
+/* Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .skpd-hero-wrapper {
+    padding: 0 10px;
+  }
+
+  .skpd-hero-card {
+    padding-top: 26px;
+    padding-bottom: 0;
+  }
+
+  .skpd-hero-inner {
+    padding: 0 8px;
+  }
+
+  .skpd-hero-title {
+    font-size: 21px;
+    margin-top: 10px;
+    line-height: 1.2;
+  }
+
+  .skpd-hero-subtitle {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .skpd-hero-cta {
+    padding: 6px 14px 6px 6px;
+  }
+
+  .cta-icon-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cta-text {
+    font-size: 13.5px;
+  }
+}

@@ -1,0 +1,252 @@
+/* =========================================================
+   JOIN BANNER SECTION - "Come Back. Connect. Belong."
+   No unnecessary gaps, full uncropped crowd image at card bottom
+   ========================================================= */
+
+.join-banner-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding: 0px 24px 0px 24px;
+  box-sizing: border-box;
+}
+
+.join-banner-container {
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card with blueprint graph grid background */
+.join-banner-card {
+  position: relative;
+  background-color: #f8fafc;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 54px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.join-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join-banner-title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin-bottom: 14px;
+}
+
+.join-highlight {
+  color: #032153;
+}
+
+.join-banner-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 26px;
+  max-width: 600px;
+}
+
+/* CTA Pill Button */
+.join-banner-cta-wrapper {
+  margin-bottom: 20px;
+}
+
+.join-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #032153;
+  color: #ffffff;
+  padding: 8px 24px 8px 8px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.join-banner-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(3, 33, 83, 0.35);
+}
+
+.join-cta-icon-badge {
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-cta-icon-img {
+  width: 16px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.join-cta-text {
+  padding-right: 4px;
+}
+
+/* Bottom Crowd Image - Full, Uncropped Display */
+.join-banner-crowd-wrapper {
+  width: 100%;
+  position: relative;
+  line-height: 0;
+  margin-top: 8px;
+}
+
+.join-banner-crowd-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+@media (min-width: 1920px) {
+  .join-banner-card {
+    border-radius: 32px;
+    padding-top: 64px;
+  }
+
+  .join-banner-title {
+    font-size: 48px;
+  }
+
+  .join-banner-subtitle {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .join-banner-section {
+    padding: 35px 5% 55px 5%;
+  }
+
+  .join-banner-card {
+    padding-top: 48px;
+  }
+
+  .join-banner-title {
+    font-size: 36px;
+  }
+
+  .join-banner-subtitle {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .join-banner-section {
+    padding: 25px 4% 45px 4%;
+  }
+
+  .join-banner-card {
+    border-radius: 22px;
+    padding-top: 38px;
+    background-size: 26px 26px;
+  }
+
+  .join-banner-title {
+    font-size: 28px;
+  }
+
+  .join-banner-subtitle {
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+
+  .join-banner-cta-wrapper {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .join-banner-section {
+    padding: 20px 3% 35px 3%;
+  }
+
+  .join-banner-card {
+    padding-top: 30px;
+    border-radius: 18px;
+  }
+
+  .join-banner-title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .join-banner-subtitle {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .join-banner-cta-wrapper {
+    margin-bottom: 14px;
+  }
+
+  .join-banner-cta {
+    font-size: 13.5px;
+    padding: 7px 16px 7px 7px;
+  }
+
+  .join-cta-icon-badge {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .join-banner-title {
+    font-size: 22px;
+  }
+
+  .join-banner-subtitle {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .join-banner-title {
+    font-size: 19px;
+  }
+
+  .join-banner-subtitle {
+    font-size: 12px;
+  }
+}

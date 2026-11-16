@@ -1,0 +1,318 @@
+/* Alumni Stories Section - "The Journey Continues Beyond the Gates" */
+
+.stories-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding: 75px 5%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.stories-container {
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stories-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 24px;
+}
+
+.stories-header-left {
+  max-width: 680px;
+}
+
+.stories-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #f1f4f9;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
+
+.stories-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #032153;
+  border-radius: 50%;
+}
+
+.stories-badge-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #121826;
+  text-transform: uppercase;
+}
+
+.stories-title {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #121826;
+  margin-bottom: 12px;
+}
+
+.stories-highlight {
+  color: #032153;
+}
+
+.stories-subtitle {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Nav Arrow Buttons on Top Right */
+.stories-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.stories-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121826;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.stories-arrow-btn:hover {
+  background-color: #032153;
+  color: #ffffff;
+  border-color: #032153;
+}
+
+.stories-arrow-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* 4-Cards Grid */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.story-card {
+  position: relative;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #1e293b;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+}
+
+.story-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Dark gradient overlay for text readability */
+.story-card-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(10, 20, 40, 0.75) 65%,
+    rgba(5, 12, 28, 0.94) 100%
+  );
+  z-index: 1;
+}
+
+.story-card-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.story-quote {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 20px;
+}
+
+.story-author-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.story-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-author-name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.story-author-role {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.story-batch-tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+@media (min-width: 1920px) {
+  .stories-title {
+    font-size: 48px;
+  }
+  .story-card {
+    height: 480px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .story-card {
+    height: 380px;
+  }
+  .stories-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stories-section {
+    padding: 56px 16px;
+  }
+  .stories-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+  .stories-title {
+    font-size: 30px;
+  }
+  .stories-subtitle {
+    font-size: 15px;
+  }
+  .stories-nav-arrows {
+    display: none;
+  }
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .story-card {
+    height: 340px;
+    padding: 18px;
+  }
+  .story-quote {
+    font-size: 13.5px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  .stories-section {
+    padding: 44px 16px;
+  }
+  .stories-title {
+    font-size: 26px;
+  }
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .story-card {
+    height: 360px;
+    border-radius: 18px;
+  }
+  .story-quote {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .stories-title {
+    font-size: 23px;
+  }
+  .story-card {
+    height: 330px;
+  }
+}
+
+@media (max-width: 320px) {
+  .stories-title {
+    font-size: 20px;
+  }
+  .story-card {
+    height: 300px;
+    padding: 14px;
+  }
+  .story-quote {
+    font-size: 12.5px;
+  }
+}
+

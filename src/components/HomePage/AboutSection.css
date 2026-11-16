@@ -1,0 +1,406 @@
+.about-section {
+  padding: 75px 5%;
+  background-color: #ffffff;
+}
+
+.about-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Badge Pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #F3F3F3;
+  padding: 12px 25px;
+  border-radius: 9999px;
+  margin-bottom: 25px;
+}
+
+.badge-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #032153;
+  border-radius: 50%;
+}
+
+.badge-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #1E1E1E;
+  text-transform: uppercase;
+}
+
+/* Titles and Typography */
+.about-title {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.about-highlight {
+  color: #032153;
+  font-family: var(--font-heading);
+}
+
+.about-description {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.65;
+  color: #333333;
+  margin-bottom: 70px;
+  max-width: 540px;
+}
+
+/* Stats Row */
+.about-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1C3764;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #333333;
+  text-transform: uppercase;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 44px;
+  background-color: #e2e8f0;
+  flex-shrink: 0;
+}
+
+/* Image on the Right */
+.about-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image-card {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(11, 34, 78, 0.12);
+  background-color: #f1f5f9;
+}
+
+.about-alumni-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-alumni-img:hover {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (About Section)
+   ========================================================= */
+
+/* Extra Large (1920px Full-width) */
+@media (min-width: 1920px) {
+  .about-container {
+    max-width: 1580px;
+    gap: 72px;
+  }
+
+  .about-title {
+    font-size: 48px;
+  }
+
+  .about-description {
+    font-size: 18px;
+    max-width: 620px;
+  }
+
+  .stat-number {
+    font-size: 44px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .about-alumni-img {
+    height: 480px;
+  }
+}
+
+/* Large Desktop (1440px Wide desktop) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .about-container {
+    max-width: 1360px;
+    gap: 60px;
+  }
+
+  .about-title {
+    font-size: 44px;
+  }
+
+  .about-alumni-img {
+    height: 440px;
+  }
+}
+
+/* Desktop (1280px Desktop layout) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .about-container {
+    max-width: 1200px;
+    gap: 48px;
+  }
+}
+
+/* Laptop (1024px Small laptop layout) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-container {
+    gap: 36px;
+    padding: 0 20px;
+  }
+
+  .about-title {
+    font-size: 34px;
+  }
+
+  .about-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .about-alumni-img {
+    height: 360px;
+  }
+}
+
+/* Tablet (768px Tablet layout) */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 48px 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    word-break: break-word;
+  }
+
+  .about-description {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .about-stats-row {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .stat-number {
+    font-size: 30px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .stat-divider {
+    height: 38px;
+  }
+
+  .about-alumni-img {
+    height: 320px;
+    border-radius: 18px;
+  }
+}
+
+/* Mobile Large (430px Large mobile) */
+@media (max-width: 430px) {
+  .about-section {
+    padding: 40px 16px;
+  }
+
+  .about-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .about-description {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .about-stats-row {
+    gap: 8px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+  }
+
+  .stat-divider {
+    height: 32px;
+  }
+
+  .about-alumni-img {
+    height: 260px;
+  }
+}
+
+/* Mobile (375px Standard mobile) */
+@media (max-width: 375px) {
+  .about-section {
+    padding: 36px 14px;
+  }
+
+  .about-title {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+
+  .about-stats-row {
+    gap: 6px;
+  }
+
+  .stat-number {
+    font-size: 21px;
+  }
+
+  .stat-label {
+    font-size: 8.5px;
+    line-height: 1.2;
+  }
+
+  .stat-divider {
+    height: 28px;
+  }
+
+  .about-alumni-img {
+    height: 230px;
+  }
+}
+
+/* Mobile Small (320px Small mobile) */
+@media (max-width: 320px) {
+  .about-section {
+    padding: 30px 10px;
+  }
+
+  .about-container {
+    padding: 0;
+  }
+
+  .about-title {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .about-description {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  .about-stats-row {
+    gap: 4px;
+  }
+
+  .stat-number {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 7.5px;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+  }
+
+  .stat-divider {
+    height: 24px;
+  }
+
+  .about-alumni-img {
+    height: 200px;
+    border-radius: 12px;
+  }
+}
