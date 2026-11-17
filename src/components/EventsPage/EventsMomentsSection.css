@@ -1,0 +1,775 @@
+/* =========================================================
+   EventsMomentsSection.css - Moments We've Shared Grid
+   Full Responsive Layout (320px - 1920px)
+   ========================================================= */
+
+.events-moments-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 75px 5%;
+  box-sizing: border-box;
+}
+
+.events-moments-container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER: BADGE, TITLE, FILTER PILLS
+   ========================================================= */
+
+.events-moments-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.events-moments-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f4f9;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.moments-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #032153;
+  border-radius: 50%;
+}
+
+.moments-badge-text {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #121826;
+  text-transform: uppercase;
+}
+
+.events-moments-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #121826;
+  margin: 0 0 24px 0;
+}
+
+.events-moments-highlight {
+  color: #032153;
+  font-family: var(--font-heading);
+}
+
+/* Filter Bar: All | Popular | Latest */
+.events-filter-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8fafc;
+  padding: 5px 6px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-pill-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body, );
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-pill-btn:hover {
+  color: #032153;
+  background-color: rgba(3, 33, 83, 0.05);
+}
+
+.filter-pill-btn.active {
+  background-color: #032153;
+  color: #ffffff;
+}
+
+/* =========================================================
+   EVENTS GRID: 3 COLUMNS BY DEFAULT
+   ========================================================= */
+
+.events-moments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 56px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   EVENT CARD
+   ========================================================= */
+
+.event-moment-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  box-sizing: border-box;
+}
+
+.event-moment-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(3, 33, 83, 0.2);
+}
+
+.event-moment-media {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  position: relative;
+}
+
+.event-moment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-moment-card:hover .event-moment-img {
+  transform: scale(1.04);
+}
+
+.event-moment-body {
+  padding: 20px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.event-tag-pill {
+  align-self: flex-start;
+  display: inline-block;
+  background-color: #f1f4f9;
+  color: #032153;
+  font-family: var(--font-body, );
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.event-moment-card-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: #121826;
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease;
+}
+
+.event-moment-card:hover .event-moment-card-title {
+  color: #032153;
+}
+
+.event-moment-description {
+  font-family: var(--font-body, );
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+/* Card Footer: Date & Learn More */
+.event-moment-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  gap: 12px;
+}
+
+.event-moment-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body, );
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.event-date-icon {
+  width: 15px;
+  height: 15px;
+  color: #032153;
+  flex-shrink: 0;
+}
+
+.event-learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body, );
+  font-size: 13px;
+  font-weight: 700;
+  color: #001a40;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.event-diagonal-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.22s ease;
+}
+
+.event-moment-card:hover .event-learn-more-link {
+  color: #032153;
+}
+
+.event-moment-card:hover .event-diagonal-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================================
+   PAGINATION BAR
+   ========================================================= */
+
+.events-pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.pagination-nav-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body, );
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.pagination-nav-btn:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  color: #032153;
+}
+
+.pagination-nav-btn:disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-num-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-family: var(--font-body, );
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pagination-num-btn:hover:not(.active) {
+  background-color: #f1f5f9;
+  color: #032153;
+}
+
+.pagination-num-btn.active {
+  background-color: #032153;
+  color: #ffffff;
+  border-color: #032153;
+}
+
+.pagination-ellipsis {
+  font-family: var(--font-body, );
+  font-size: 14px;
+  color: #94a3b8;
+  padding: 0 4px;
+}
+
+/* =========================================================
+   EVENT DETAILS POPUP MODAL
+   ========================================================= */
+
+.event-modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background-color: rgba(3, 21, 51, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  animation: modalFadeIn 0.25s ease forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.event-modal-card {
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(3, 21, 51, 0.35);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.event-modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.event-modal-badge {
+  background-color: #f1f4f9;
+  color: #032153;
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.event-modal-close {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-modal-close:hover {
+  background-color: #032153;
+  color: #ffffff;
+  border-color: #032153;
+}
+
+.event-modal-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.event-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.event-modal-content {
+  padding: 22px 24px 26px 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.event-modal-title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #121826;
+  margin: 0 0 14px 0;
+  line-height: 1.25;
+}
+
+.event-modal-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.modal-meta-item svg {
+  color: #032153;
+  flex-shrink: 0;
+}
+
+.modal-meta-item.full-row {
+  grid-column: 1 / -1;
+}
+
+.event-modal-desc {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 14px;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS (ALL 8 BREAKPOINTS)
+   ========================================================= */
+
+/* 1. Extra Large (1920px Full-width layout) */
+@media (min-width: 1920px) {
+
+  .events-moments-title {
+    font-size: 46px;
+  }
+
+  .events-moments-grid {
+    gap: 36px;
+  }
+}
+
+/* 2. Large Desktop (1440px Wide desktop layout) */
+@media (max-width: 1440px) {
+
+  .events-moments-title {
+    font-size: 44px;
+  }
+
+  .events-moments-grid {
+    gap: 32px;
+  }
+}
+
+/* 3. Desktop (1280px Desktop layout) */
+@media (max-width: 1280px) {
+
+  .events-moments-title {
+    font-size: 40px;
+  }
+
+  .events-moments-grid {
+    gap: 28px;
+  }
+}
+
+/* 4. Laptop (1024px Small laptop layout) */
+@media (max-width: 1024px) {
+
+  .events-moments-header {
+    margin-bottom: 40px;
+  }
+
+  .events-moments-title {
+    font-size: 36px;
+  }
+
+  .events-moments-grid {
+    gap: 24px;
+  }
+
+  .event-moment-card-title {
+    font-size: 17.5px;
+  }
+
+  .event-moment-description {
+    font-size: 13px;
+  }
+}
+
+/* 5. Tablet (768px Tablet layout - 2 Columns) */
+@media (max-width: 768px) {
+  .events-moments-section {
+    padding: 50px 20px;
+  }
+
+  .events-moments-header {
+    margin-bottom: 34px;
+  }
+
+  .events-moments-title {
+    font-size: 32px;
+  }
+
+  .events-moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 44px;
+  }
+
+  .event-moment-body {
+    padding: 16px 18px 18px 18px;
+  }
+
+  .event-moment-card-title {
+    font-size: 17px;
+  }
+}
+
+/* 6. Mobile Large (430px Large mobile layout - 1 Column) */
+@media (max-width: 430px) {
+  .events-moments-section {
+    padding: 44px 16px;
+  }
+
+  .events-moments-header {
+    margin-bottom: 28px;
+  }
+
+  .events-moments-title {
+    font-size: 28px;
+  }
+
+  .filter-pill-btn {
+    padding: 7px 18px;
+    font-size: 13px;
+  }
+
+  .events-moments-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .event-moment-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .event-moment-body {
+    padding: 16px 16px 18px 16px;
+  }
+
+  .event-moment-card-title {
+    font-size: 18px;
+  }
+
+  .event-modal-overlay {
+    padding: 14px;
+  }
+
+  .event-modal-card {
+    border-radius: 20px;
+    max-height: 86vh;
+  }
+
+  .event-modal-topbar {
+    padding: 14px 18px;
+  }
+
+  .event-modal-media {
+    width: 100%;
+    aspect-ratio: 16 / 9.5;
+    flex-shrink: 0;
+  }
+
+  .event-modal-content {
+    padding: 16px 18px 20px 18px;
+  }
+
+  .event-modal-title {
+    font-size: 19px;
+    margin: 0 0 12px 0;
+  }
+
+  .event-modal-meta-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+  }
+
+  .modal-meta-item {
+    font-size: 12px;
+  }
+
+  .event-modal-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+/* 7. Mobile (375px Standard mobile layout) */
+@media (max-width: 375px) {
+  .events-moments-section {
+    padding: 38px 14px;
+  }
+
+  .events-moments-title {
+    font-size: 25px;
+  }
+
+  .events-filter-bar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .filter-pill-btn {
+    padding: 6px 14px;
+    font-size: 12.5px;
+  }
+
+  .events-moments-grid {
+    gap: 18px;
+  }
+
+  .event-moment-card-title {
+    font-size: 17px;
+  }
+
+  .event-moment-description {
+    font-size: 13px;
+  }
+
+  .pagination-nav-btn {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
+
+  .pagination-num-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12.5px;
+  }
+}
+
+/* 8. Mobile Small (320px Small mobile layout) */
+@media (max-width: 320px) {
+  .events-moments-section {
+    padding: 32px 10px;
+  }
+
+  .events-moments-badge {
+    padding: 4px 12px;
+  }
+
+  .moments-badge-text {
+    font-size: 10px;
+  }
+
+  .events-moments-title {
+    font-size: 22px;
+  }
+
+  .filter-pill-btn {
+    padding: 6px 10px;
+    font-size: 11.5px;
+  }
+
+  .events-moments-grid {
+    gap: 16px;
+  }
+
+  .event-moment-card-title {
+    font-size: 16px;
+  }
+
+  .event-moment-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .pagination-numbers {
+    gap: 4px;
+  }
+
+  .pagination-num-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 11.5px;
+  }
+
+  .event-modal-overlay {
+    padding: 8px;
+  }
+
+  .event-modal-card {
+    border-radius: 16px;
+  }
+
+  .event-modal-topbar {
+    padding: 10px 14px;
+  }
+
+  .event-modal-content {
+    padding: 14px 12px;
+  }
+
+  .event-modal-title {
+    font-size: 17.5px;
+  }
+}

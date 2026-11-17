@@ -53,7 +53,7 @@
 }
 
 .leadership-badge-text {
-  font-family: var(--font-body, system-ui, sans-serif);
+  font-family: var(--font-body, );
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -62,7 +62,7 @@
 }
 
 .membership-leadership-title {
-  font-family: var(--font-heading, system-ui, sans-serif);
+  font-family: var(--font-heading);
   font-size: 40px;
   font-weight: 800;
   line-height: 1.2;
@@ -76,7 +76,7 @@
 }
 
 .membership-leadership-subtitle {
-  font-family: var(--font-body, system-ui, sans-serif);
+  font-family: var(--font-body, );
   font-size: 16px;
   line-height: 1.6;
   color: #64748b;
@@ -193,7 +193,7 @@
 }
 
 .membership-leader-name {
-  font-family: var(--font-heading, system-ui, sans-serif);
+  font-family: var(--font-heading);
   font-size: 17.5px;
   font-weight: 700;
   color: #121826;
@@ -203,7 +203,7 @@
 }
 
 .membership-leader-role {
-  font-family: var(--font-body, system-ui, sans-serif);
+  font-family: var(--font-body, );
   font-size: 13.5px;
   line-height: 1.45;
   color: #64748b;
@@ -299,14 +299,22 @@
 
 /* 5. Tablet (768px Tablet layout) - 2 Cards Visible */
 @media (max-width: 768px) {
-
-
   .membership-leadership-header {
-    margin-bottom: 36px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 32px;
   }
 
   .membership-leadership-title {
     font-size: 32px;
+  }
+
+  .leadership-arrow-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
   }
 
   .membership-leadership-carousel {
@@ -328,7 +336,7 @@
   }
 }
 
-/* 6. Mobile Large (430px Large mobile) - 1.2 Cards Visible */
+/* 6. Mobile Large (430px Large mobile) - EXACTLY 1 Card Visible (No 2nd Card Cropped) */
 @media (max-width: 430px) {
   .membership-leadership-section {
     padding: 44px 16px 60px 16px;
@@ -336,9 +344,9 @@
 
   .membership-leadership-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 28px;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 
   .membership-leadership-title {
@@ -346,42 +354,77 @@
   }
 
   .leadership-arrow-controls {
-    align-self: flex-start;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: 4px;
   }
 
   .membership-leadership-carousel {
-    gap: 16px;
+    gap: 0;
+    padding-bottom: 8px;
   }
 
   .membership-leader-card {
-    flex: 0 0 85%;
-    min-width: 85%;
-    max-width: 85%;
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
   }
 
   .membership-leader-media {
-    border-radius: 16px;
+    border-radius: 18px;
+    aspect-ratio: 1 / 1.05;
+  }
+
+  .membership-leader-name {
+    font-size: 17px;
+  }
+
+  .membership-leader-role {
+    font-size: 13.5px;
   }
 }
 
-/* 7. Mobile (375px Standard mobile) */
+/* 7. Mobile (375px Standard mobile) - EXACTLY 1 Card Visible */
 @media (max-width: 375px) {
+  .membership-leadership-section {
+    padding: 40px 14px 54px 14px;
+  }
+
   .membership-leadership-title {
     font-size: 25px;
   }
 
+  .leadership-arrow-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .membership-leadership-carousel {
+    gap: 0;
+  }
+
   .membership-leader-card {
-    flex: 0 0 88%;
-    min-width: 88%;
-    max-width: 88%;
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
   }
 
   .membership-leader-name {
-    font-size: 15.5px;
+    font-size: 16px;
+  }
+
+  .membership-leader-role {
+    font-size: 13px;
   }
 }
 
-/* 8. Mobile Small (320px Small mobile) */
+/* 8. Mobile Small (320px Small mobile) - EXACTLY 1 Card Visible */
 @media (max-width: 320px) {
   .membership-leadership-section {
     padding: 36px 12px 48px 12px;
@@ -396,10 +439,22 @@
     height: 38px;
   }
 
+  .leadership-arrow-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .membership-leadership-carousel {
+    gap: 0;
+  }
+
   .membership-leader-card {
-    flex: 0 0 92%;
-    min-width: 92%;
-    max-width: 92%;
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
   }
 
   .membership-leader-name {

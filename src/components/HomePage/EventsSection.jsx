@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './EventsSection.css';
 import event1 from '../../assets/event1.webp';
 import event2 from '../../assets/event2.webp';
@@ -94,7 +96,7 @@ export default function EventsSection() {
                     <span>{event.date}</span>
                   </div>
 
-                  <a href={`#event-${event.id}`} className="event-learn-more">
+                  <Link to="/events" className="event-learn-more">
                     <span>Learn more</span>
                     <svg
                       className="event-arrow-icon"
@@ -109,12 +111,12 @@ export default function EventsSection() {
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>
           ))}
-        </div>s
+        </div>
       </div>
     </section>
   );

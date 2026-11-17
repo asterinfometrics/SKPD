@@ -12,7 +12,9 @@ export default function Navbar({ activePage }) {
   const currentPath = location?.pathname || '/';
   const effectiveActive = activePage || (
     currentPath === '/about' ? 'about' :
-    currentPath === '/membership' ? 'membership' : 'home'
+    currentPath === '/membership' ? 'membership' :
+    currentPath === '/events' ? 'events' :
+    currentPath === '/contact' ? 'contact' : 'home'
   );
 
   useEffect(() => {
@@ -43,9 +45,9 @@ export default function Navbar({ activePage }) {
   ];
 
   const rightNavItems = [
-    { label: 'Events', to: '/#events', id: 'events' },
+    { label: 'Events', to: '/events', id: 'events' },
     { label: 'Articles', to: '/#articles', id: 'articles' },
-    { label: 'Contact', to: '/#contact', id: 'contact' },
+    { label: 'Contact', to: '/contact', id: 'contact' },
   ];
 
   return (

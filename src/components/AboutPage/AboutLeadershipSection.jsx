@@ -1,100 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LeaderModal from '../Common/LeaderModal';
+import { allCommitteeMembers } from '../MembershipPage/MembershipLeadershipSection';
 import './AboutLeadershipSection.css';
 
-import leader1 from '../../assets/leader_1.webp';
-import leader2 from '../../assets/leader_2.webp';
-import leader3 from '../../assets/leader_3.webp';
-import leader4 from '../../assets/leader_4.webp';
-
-const committeeMembers = [
-  {
-    id: 1,
-    name: 'Voora Lakshmi Narasimha Rao',
-    role: 'President',
-    imgSrc: leader1,
-    alt: 'Portrait of R. Srinivasan, President',
-  },
-  {
-    id: 2,
-    name: 'A.Sudhakar',
-    role: 'Vice President',
-    imgSrc: leader2,
-    alt: 'Portrait of S. Venkatesh, Vice President',
-  },
-  {
-    id: 3,
-    name: 'P.RadhaKrishna',
-    role: 'Vice President',
-    imgSrc: leader2,
-    alt: 'Portrait of S. Venkatesh, Vice President',
-  },
-  {
-    id: 4,
-    name: 'V.Anjaneyulu',
-    role: 'Vice President',
-    imgSrc: leader2,
-    alt: 'Portrait of S. Venkatesh, Vice President',
-  },
-
-  {
-    id: 5,
-    name: 'Y.Suresh Babu',
-    role: 'Secretary',
-    imgSrc: leader3,
-    alt: 'Portrait of K. Prakash, Secretary',
-  },
-  {
-    id: 6,
-    name: 'V.Ramesh Gupta',
-    role: 'Joint Secretary',
-    imgSrc: leader3,
-    alt: 'Portrait of K. Prakash, Secretary',
-  },
-  {
-    id: 7,
-    name: 'Srinivasulu Kanamarlapudi',
-    role: 'Treasurer, Alumni Association',
-    imgSrc: leader4,
-    alt: 'Portrait of A. Raghavan, Treasurer',
-  },
-  {
-    id: 8,
-    name: 'J.Badrinath',
-    role: 'Executive Commitee',
-    imgSrc: leader4,
-    alt: 'Portrait of A. Raghavan, Treasurer',
-  },
-  {
-    id: 9,
-    name: 'V.Venkateswarlu',
-    role: 'Executive Commitee',
-    imgSrc: leader4,
-    alt: 'Portrait of A. Raghavan, Treasurer',
-  },
-  {
-    id: 10,
-    name: 'Mukkala Sriramprasad',
-    role: 'Executive Commitee',
-    imgSrc: leader4,
-    alt: 'Portrait of A. Raghavan, Treasurer',
-  },
-  {
-    id: 11,
-    name: 'K.Ramesh',
-    role: 'Executive Commitee',
-    imgSrc: leader4,
-    alt: 'Portrait of A. Raghavan, Treasurer',
-  },
-];
-
 export default function AboutLeadershipSection() {
+  const [selectedMember, setSelectedMember] = useState(null);
+
   return (
     <section className="about-leadership-section" id="leadership">
       <div className="about-leadership-container">
         {/* Section Header */}
         <div className="about-leadership-header">
-
           <div className="journey-badge">
             <span className="journey-badge-dot" aria-hidden="true" />
             <span className="journey-badge-text">THE PEOPLE</span>
@@ -107,8 +24,25 @@ export default function AboutLeadershipSection() {
 
         {/* 4 Leadership Cards Grid */}
         <div className="about-leadership-grid">
-          {committeeMembers.slice(0, 4).map((member) => (
-            <div key={member.id} className="leadership-card">
+          {allCommitteeMembers.slice(0, 4).map((member) => (
+            <div
+              key={member.id}
+              className="leadership-card"
+              onClick={() => setSelectedMember(member)}
+              role="button"
+              tabIndex="0"
+              aria-haspopup="dialog"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedMember(member);
+                }
+              }}
+            >
+              <span className="leader-card-badge-hint" aria-hidden="true">
+                View Profile →
+              </span>
+
               <div className="leadership-card-media">
                 <img
                   src={member.imgSrc}
@@ -142,7 +76,12 @@ export default function AboutLeadershipSection() {
           </Link>
         </div>
       </div>
+
+      {/* Responsive Profile Popup Modal */}
+      <LeaderModal
+        member={selectedMember}
+        onClose={() => setSelectedMember(null)}
+      />
     </section>
   );
 }
-

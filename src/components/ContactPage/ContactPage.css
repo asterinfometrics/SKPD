@@ -1,0 +1,18 @@
+/* =========================================================
+   ContactPage.css - Page Layout Wrapper
+   ========================================================= */
+
+.contact-page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.contact-main-content {
+  flex: 1 0 auto;
+  width: 100%;
+}
