@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../HomePage/Navbar';
 import HeroSection from '../HomePage/HeroSection';
-import ContactSection from '../HomePage/ContactSection';
 import ContactMapSection from './ContactMapSection';
 import FooterSection from '../HomePage/FooterSection';
 import './ContactPage.css';
@@ -9,9 +9,20 @@ import ContactForm from './contactform';
 import ContactFaq from './contactFaq';
 
 export default function ContactPage() {
+  const location = useLocation();
+
   useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, []);
+  }, [location]);
 
   return (
     <div className="contact-page-wrapper">

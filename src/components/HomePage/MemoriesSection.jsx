@@ -44,7 +44,7 @@ export default function MemoriesSection() {
   ];
 
   return (
-    <section className="memories-section" id="stories">
+    <section className="memories-section" id="memories">
       <div className="memories-container">
         <div className="memories-header">
 

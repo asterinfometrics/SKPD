@@ -1,0 +1,343 @@
+/* Section Base */
+.articles-stories-section {
+  width: 100%;
+  padding: 0 24px;
+  background-color: #ffffff;
+  margin-bottom: 80px;
+}
+
+.articles-stories-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header */
+.articles-stories-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 24px;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.stories-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.art-dark-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background-color: #032153;
+  ;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.dark-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.dark-pill-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.articles-stories-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.articles-stories-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+  max-width: 650px;
+}
+
+/* Controls */
+.stories-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stories-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stories-control-btn:hover {
+  background-color: #f8fafc;
+  border-color: #032153;
+  ;
+  color: #032153;
+  ;
+}
+
+/* Slider */
+.articles-stories-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.articles-stories-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Story Card */
+.alumni-story-card {
+  position: relative;
+  height: 410px;
+  width: calc((100% - 72px) / 4);
+  min-width: 280px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #032153;
+  ;
+  box-shadow: 0 4px 14px rgba(11, 37, 69, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.alumni-story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(11, 37, 69, 0.16);
+}
+
+.alumni-story-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.alumni-story-card:hover .alumni-story-bg {
+  transform: scale(1.04);
+}
+
+.alumni-story-gradient {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    180deg,
+    rgba(11, 37, 69, 0) 25%,
+    rgba(11, 37, 69, 0.6) 55%,
+    rgba(11, 37, 69, 0.95) 100%
+  ); */
+  pointer-events: none;
+}
+
+.alumni-story-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.alumni-story-quote {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  margin: auto 0 20px 0;
+}
+
+.alumni-story-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.alumni-story-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alumni-story-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.alumni-story-role {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.alumni-about-btn {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.alumni-about-btn:hover {
+  background: #ffffff;
+  color: #032153;
+  ;
+  border-color: #ffffff;
+}
+
+/* =========================================================================
+   RESPONSIVE BREAKPOINTS (320px, 375px, 430px, 768px, 1024px, 1280px, 1440px, 1920px)
+   ========================================================================= */
+
+@media (max-width: 1200px) {
+  .alumni-story-card {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: 1024px) {
+  .alumni-story-card {
+    width: calc((100% - 24px) / 2);
+    min-width: 270px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .articles-stories-section {
+    margin-bottom: 50px;
+  }
+
+  .articles-stories-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .stories-slider-controls {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .articles-stories-title {
+    font-size: 26px;
+  }
+
+  .articles-stories-slider {
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 12px;
+  }
+
+  .alumni-story-card {
+    width: 290px;
+    min-width: 290px;
+    max-width: 290px;
+    height: 380px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .articles-stories-title {
+    font-size: 22px;
+  }
+
+  .articles-stories-subtitle {
+    font-size: 13.5px;
+  }
+
+  .alumni-story-card {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
+    height: 360px;
+  }
+}
+
+@media (max-width: 375px) {
+  .articles-stories-title {
+    font-size: 20px;
+  }
+
+  .alumni-story-card {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
+    height: 340px;
+  }
+}
+
+@media (max-width: 320px) {
+  .articles-stories-title {
+    font-size: 19px;
+  }
+
+  .alumni-story-card {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
+    height: 320px;
+  }
+
+  .alumni-story-content {
+    padding: 16px 14px;
+  }
+
+  .alumni-story-quote {
+    font-size: 12px;
+  }
+
+  .alumni-about-btn {
+    padding: 5px 10px;
+    font-size: 9.5px;
+  }
+}
