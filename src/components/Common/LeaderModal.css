@@ -88,7 +88,7 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -263,7 +263,7 @@
   font-family: var(--font-heading);
   font-size: 27px;
   font-weight: 800;
-  color: #121826;
+  color: #333333;
   line-height: 1.25;
   letter-spacing: -0.02em;
   margin: 0 0 6px 0;

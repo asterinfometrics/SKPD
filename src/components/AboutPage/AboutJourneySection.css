@@ -64,7 +64,7 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin: 0 0 14px 0;
 }
 
@@ -190,7 +190,6 @@
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(11, 34, 78, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.04);
   background-color: #f1f5f9;
   aspect-ratio: 16 / 8.6;
@@ -227,7 +226,7 @@
   font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 700;
-  color: #121826;
+  color: #333333;
   margin: 0;
   letter-spacing: -0.015em;
 }

@@ -30,7 +30,6 @@
   height: 520px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
   background-color: #e2e8f0;
 }
 
@@ -71,7 +70,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -80,7 +79,7 @@
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
-  color: #121826;
+  color: #333333;
   margin-bottom: 14px;
 }
 
@@ -122,7 +121,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  color: #121826;
+  color: #333333;
 }
 
 .required-star {
@@ -152,7 +151,7 @@
   border-radius: 12px;
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: #121826;
+  color: #333333;
   background-color: #ffffff;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -166,7 +165,6 @@
 .contact-input:focus,
 .contact-textarea:focus {
   border-color: #032153;
-  box-shadow: 0 0 0 3px rgba(3, 33, 83, 0.12);
 }
 
 .contact-textarea {
@@ -176,7 +174,7 @@
   border-radius: 12px;
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: #121826;
+  color: #333333;
   background-color: #ffffff;
   outline: none;
   resize: vertical;

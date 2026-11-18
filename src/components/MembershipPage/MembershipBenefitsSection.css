@@ -47,7 +47,7 @@
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -57,7 +57,7 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin: 0 0 12px 0;
 }
 
@@ -109,7 +109,7 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-              background-color 0.3s ease;
+    background-color 0.3s ease;
 }
 
 .benefit-card:hover .hexagon-badge {
@@ -151,6 +151,7 @@
   .benefits-grid {
     column-gap: 48px;
   }
+
   .benefits-title {
     font-size: 44px;
   }
@@ -172,9 +173,11 @@
   .membership-benefits-section {
     padding: 64px 20px 80px 20px;
   }
+
   .benefits-title {
     font-size: 34px;
   }
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 32px;
@@ -187,17 +190,21 @@
   .membership-benefits-section {
     padding: 56px 20px 72px 20px;
   }
+
   .benefits-header {
     margin-bottom: 40px;
   }
+
   .benefits-title {
     font-size: 32px;
   }
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24px;
     row-gap: 32px;
   }
+
   .benefit-card-title {
     font-size: 18px;
   }
@@ -208,16 +215,20 @@
   .membership-benefits-section {
     padding: 44px 16px 60px 16px;
   }
+
   .benefits-header {
     margin-bottom: 32px;
   }
+
   .benefits-title {
     font-size: 27px;
   }
+
   .benefits-grid {
     grid-template-columns: 1fr;
     row-gap: 32px;
   }
+
   .hexagon-badge {
     width: 68px;
     height: 78px;
@@ -229,6 +240,7 @@
   .benefits-title {
     font-size: 25px;
   }
+
   .benefit-card-desc {
     font-size: 13.5px;
   }
@@ -239,12 +251,13 @@
   .membership-benefits-section {
     padding: 36px 12px 48px 12px;
   }
+
   .benefits-title {
     font-size: 22px;
   }
+
   .hexagon-badge {
     width: 60px;
     height: 70px;
   }
 }
-

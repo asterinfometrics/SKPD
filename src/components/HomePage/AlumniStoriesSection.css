@@ -50,7 +50,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -59,7 +59,7 @@
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
-  color: #121826;
+  color: #333333;
   margin-bottom: 12px;
 }
 
@@ -91,7 +91,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #121826;
+  color: #333333;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -153,12 +153,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 35%,
-    rgba(10, 20, 40, 0.75) 65%,
-    rgba(5, 12, 28, 0.94) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(10, 20, 40, 0.75) 65%,
+      rgba(5, 12, 28, 0.94) 100%);
   z-index: 1;
 }
 
@@ -224,6 +222,7 @@
   .stories-title {
     font-size: 48px;
   }
+
   .story-card {
     height: 480px;
   }
@@ -234,9 +233,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
   .story-card {
     height: 380px;
   }
+
   .stories-title {
     font-size: 36px;
   }
@@ -246,28 +247,35 @@
   .stories-section {
     padding: 56px 16px;
   }
+
   .stories-header {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 36px;
   }
+
   .stories-title {
     font-size: 30px;
   }
+
   .stories-subtitle {
     font-size: 15px;
   }
+
   .stories-nav-arrows {
     display: none;
   }
+
   .stories-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+
   .story-card {
     height: 340px;
     padding: 18px;
   }
+
   .story-quote {
     font-size: 13.5px;
     margin-bottom: 14px;
@@ -278,17 +286,21 @@
   .stories-section {
     padding: 44px 16px;
   }
+
   .stories-title {
     font-size: 26px;
   }
+
   .stories-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .story-card {
     height: 360px;
     border-radius: 18px;
   }
+
   .story-quote {
     font-size: 14px;
   }
@@ -298,6 +310,7 @@
   .stories-title {
     font-size: 23px;
   }
+
   .story-card {
     height: 330px;
   }
@@ -307,12 +320,13 @@
   .stories-title {
     font-size: 20px;
   }
+
   .story-card {
     height: 300px;
     padding: 14px;
   }
+
   .story-quote {
     font-size: 12.5px;
   }
 }
-

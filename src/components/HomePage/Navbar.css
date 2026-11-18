@@ -9,10 +9,13 @@
   z-index: 1000;
   border-bottom: 1px solid transparent;
   box-sizing: border-box;
-  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease,
-              padding 0.3s ease;
+  padding: 0 24px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: background-color 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
 }
 
 .skpd-header.is-scrolled {
@@ -24,24 +27,30 @@
   padding: 0 24px;
 }
 
+.skpd-header .skpd-nav-container {
+  height: 64px;
+  min-height: 64px;
+  transition: height 0.25s ease;
+}
+
 .skpd-header.is-scrolled .skpd-nav-container {
-  height: 52px;
-  min-height: 52px;
+  height: 56px;
+  min-height: 56px;
 }
 
 .skpd-header.is-scrolled .skpd-logo-anchor {
   margin-bottom: 0;
-  height: 42px;
+  height: 44px;
 }
 
 .skpd-header.is-scrolled .crest-logo-wrapper {
   margin-top: 0 !important;
-  width: 42px !important;
-  height: 42px !important;
-  --logo-w: 42px !important;
-  --logo-h: 42px !important;
+  width: 44px !important;
+  height: 44px !important;
+  --logo-w: 44px !important;
+  --logo-h: 44px !important;
   transform: none !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skpd-header.is-scrolled .skpd-crest-link:hover .crest-logo-wrapper {
@@ -49,12 +58,19 @@
 }
 
 .skpd-header.is-scrolled .skpd-nav-link {
-  font-size: 14.5px;
+  font-size: 15px;
   padding: 4px 0;
 }
 
 .crest-logo-wrapper {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: var(--logo-w, var(--default-logo-w, 112px));
+  height: var(--logo-h, var(--default-logo-h, 112px));
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Scroll Reading Progress Bar */
@@ -342,29 +358,49 @@
 /* Tablet (768px Tablet layout) */
 @media (max-width: 768px) {
   .skpd-header {
-    padding: 8px 16px;
+    padding: 0 16px;
   }
 
   .skpd-header.is-scrolled {
     padding: 0 16px;
   }
 
+  .skpd-header .skpd-nav-container {
+    height: 56px;
+    min-height: 56px;
+  }
+
   .skpd-header.is-scrolled .skpd-nav-container {
-    height: 48px;
-    min-height: 48px;
+    height: 52px;
+    min-height: 52px;
+  }
+
+  /* Eliminate margin-top jump on mobile and scale properly */
+  .crest-logo-wrapper {
+    margin-top: 0 !important;
+    width: var(--logo-w, 50px) !important;
+    height: var(--logo-h, 50px) !important;
+  }
+
+  .skpd-logo-anchor {
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
   }
 
   .skpd-header.is-scrolled .skpd-logo-anchor {
     transform: none;
-    margin-bottom: 0;
-    height: 38px;
+    margin-bottom: 0 !important;
+    height: auto;
   }
 
   .skpd-header.is-scrolled .crest-logo-wrapper {
-    width: 38px !important;
-    height: 38px !important;
-    --logo-w: 38px !important;
-    --logo-h: 38px !important;
+    width: 42px !important;
+    height: 42px !important;
+    --logo-w: 42px !important;
+    --logo-h: 42px !important;
     margin-top: 0 !important;
   }
 
@@ -386,47 +422,59 @@
   }
 
   .skpd-logo-anchor {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .skpd-nav-crest {
-    --logo-w: 68px;
-    --logo-h: 68px;
+    --logo-w: 50px;
+    --logo-h: 50px;
   }
 }
 
 /* Mobile Large (430px Large mobile) */
 @media (max-width: 430px) {
   .skpd-header {
-    padding: 6px 16px;
+    padding: 0 16px;
+  }
+
+  .skpd-header.is-scrolled {
+    padding: 0 16px;
   }
 
   .skpd-nav-crest {
-    --logo-w: 60px;
-    --logo-h: 60px;
+    --logo-w: 48px;
+    --logo-h: 48px;
   }
 }
 
 /* Mobile (375px Standard mobile) */
 @media (max-width: 375px) {
   .skpd-header {
-    padding: 6px 14px;
+    padding: 0 14px;
+  }
+
+  .skpd-header.is-scrolled {
+    padding: 0 14px;
   }
 
   .skpd-nav-crest {
-    --logo-w: 54px;
-    --logo-h: 54px;
+    --logo-w: 46px;
+    --logo-h: 46px;
   }
 }
 
 /* Mobile Small (320px Small mobile) */
 @media (max-width: 320px) {
   .skpd-header {
-    padding: 4px 10px;
+    padding: 0 10px;
+  }
+
+  .skpd-header.is-scrolled {
+    padding: 0 10px;
   }
 
   .skpd-nav-crest {
-    --logo-w: 48px;
-    --logo-h: 48px;
+    --logo-w: 42px;
+    --logo-h: 42px;
   }
 }

@@ -57,7 +57,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -197,7 +197,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
-  color: #121826;
+  color: #333333;
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color 0.2s ease, gap 0.2s ease;

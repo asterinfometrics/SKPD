@@ -46,7 +46,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -111,7 +111,7 @@
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  color: #121826;
+  color: #333333;
   line-height: 1.35;
   margin-bottom: 8px;
 }
@@ -178,6 +178,7 @@
   .articles-title {
     font-size: 48px;
   }
+
   .article-image-frame {
     height: 290px;
   }
@@ -188,6 +189,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
+
   .article-image-frame {
     height: 230px;
   }
@@ -197,13 +199,16 @@
   .articles-section {
     padding: 56px 16px;
   }
+
   .articles-title {
     font-size: 32px;
   }
+
   .articles-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
+
   .article-image-frame {
     height: 190px;
   }
@@ -213,16 +218,20 @@
   .articles-section {
     padding: 44px 16px;
   }
+
   .articles-title {
     font-size: 26px;
   }
+
   .articles-grid {
     grid-template-columns: 1fr;
     gap: 26px;
   }
+
   .article-image-frame {
     height: 230px;
   }
+
   .article-card-title {
     font-size: 19px;
   }
@@ -232,6 +241,7 @@
   .articles-title {
     font-size: 23px;
   }
+
   .article-image-frame {
     height: 210px;
   }
@@ -241,8 +251,8 @@
   .articles-title {
     font-size: 20px;
   }
+
   .article-image-frame {
     height: 180px;
   }
 }
-

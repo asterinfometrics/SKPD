@@ -48,7 +48,7 @@
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #121826;
+  color: #333333;
   text-transform: uppercase;
 }
 
@@ -58,7 +58,7 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin: 0 0 14px 0;
 }
 
@@ -90,7 +90,7 @@
   font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 700;
-  color: #121826;
+  color: #333333;
   margin: 0 0 8px 0;
   letter-spacing: -0.015em;
 }
@@ -239,9 +239,7 @@
 }
 
 /* Large Desktop (1440px Wide desktop layout) */
-@media (min-width: 1440px) and (max-width: 1919px) {
-
-}
+@media (min-width: 1440px) and (max-width: 1919px) {}
 
 /* Desktop (1280px Desktop layout) */
 @media (min-width: 1025px) and (max-width: 1439px) {
@@ -257,6 +255,7 @@
     grid-template-columns: 1fr 1.2fr;
     gap: 36px;
   }
+
   .membership-faq-title {
     font-size: 34px;
   }
@@ -269,9 +268,11 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .membership-faq-title {
     font-size: 32px;
   }
+
   .membership-faq-subtitle {
     margin-bottom: 24px;
   }
@@ -282,15 +283,19 @@
   .membership-faq-section {
     padding: 44px 16px 60px 16px;
   }
+
   .membership-faq-title {
     font-size: 28px;
   }
+
   .membership-help-card {
     padding: 24px 20px;
   }
+
   .faq-question-btn {
     padding: 16px 16px;
   }
+
   .faq-question-text {
     font-size: 15px;
   }
@@ -308,14 +313,16 @@
   .membership-faq-section {
     padding: 36px 12px 48px 12px;
   }
+
   .membership-faq-title {
     font-size: 22px;
   }
+
   .faq-question-btn {
     padding: 14px 12px;
   }
+
   .faq-question-text {
     font-size: 14px;
   }
 }
-

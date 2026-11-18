@@ -34,7 +34,7 @@
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin: 0;
 }
 
@@ -69,14 +69,9 @@
   border-radius: 20px;
   overflow: hidden;
   background-color: #f1f5f9;
-  box-shadow: 0 10px 28px rgba(11, 34, 78, 0.07);
   border: 1px solid rgba(0, 0, 0, 0.04);
   margin-bottom: 16px;
   transition: box-shadow 0.35s ease;
-}
-
-.leadership-card:hover .leadership-card-media {
-  box-shadow: 0 16px 36px rgba(7, 31, 74, 0.14);
 }
 
 .leadership-card-img {
@@ -101,7 +96,7 @@
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  color: #121826;
+  color: #333333;
   margin: 0 0 4px 0;
   letter-spacing: -0.015em;
 }
@@ -137,13 +132,11 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(0, 26, 64, 0.18);
 }
 
 .about-leadership-cta-btn:hover {
   background-color: #032153;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(3, 33, 83, 0.25);
   color: #ffffff;
 }
 

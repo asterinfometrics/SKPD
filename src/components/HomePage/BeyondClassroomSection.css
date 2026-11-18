@@ -78,12 +78,15 @@
     transform: rotate(calc(var(--angle-step) * -4.5));
     opacity: 0;
   }
+
   2% {
     opacity: 1;
   }
+
   98% {
     opacity: 1;
   }
+
   100% {
     transform: rotate(calc(var(--angle-step) * 4.5));
     opacity: 0;
@@ -172,7 +175,7 @@
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin-bottom: 14px;
 }
 

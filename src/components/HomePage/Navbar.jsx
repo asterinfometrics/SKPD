@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import CrestLogo from './CrestLogo';
 import './Navbar.css';
@@ -6,7 +6,7 @@ import './Navbar.css';
 export default function Navbar({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const progressRef = useRef(null);
   const location = useLocation();
 
   const currentPath = location?.pathname || '/';
@@ -19,17 +19,38 @@ export default function Navbar({ activePage }) {
   );
 
   useEffect(() => {
+    let ticking = false;
+    let lastScrolled = false;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      setIsScrolled(scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY || window.pageYOffset;
 
-      const winHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight;
-      const totalScroll = docHeight - winHeight;
+          // Hysteresis threshold: 70px to activate, 20px to deactivate
+          // This eliminates bouncing/jitter feedback loops when scrolling near the threshold
+          if (!lastScrolled && scrollY > 70) {
+            lastScrolled = true;
+            setIsScrolled(true);
+          } else if (lastScrolled && scrollY < 20) {
+            lastScrolled = false;
+            setIsScrolled(false);
+          }
 
-      if (totalScroll > 0) {
-        const percent = Math.min(100, Math.max(0, (scrollY / totalScroll) * 100));
-        setScrollProgress(percent);
+          // Direct DOM style update to prevent re-rendering Navbar on every scroll pixel
+          if (progressRef.current) {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const totalScroll = docHeight - winHeight;
+            if (totalScroll > 0) {
+              const percent = Math.min(100, Math.max(0, (scrollY / totalScroll) * 100));
+              progressRef.current.style.width = `${percent}%`;
+            }
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -56,8 +77,9 @@ export default function Navbar({ activePage }) {
       {/* Scroll Progress Bar at the bottom of header */}
       <div className="skpd-scroll-progress-track" aria-hidden="true">
         <div
+          ref={progressRef}
           className="skpd-scroll-progress-indicator"
-          style={{ width: `${scrollProgress}%` }}
+          style={{ width: '0%' }}
         />
       </div>
 

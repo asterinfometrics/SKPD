@@ -1,23 +1,18 @@
-import React from 'react';
 import skpdLogo from '../../assets/logo.webp';
 
-export default function CrestLogo({ className = '', width = 112, height = 112, marginTop = '30px', style = {} }) {
+export default function CrestLogo({ className = '', width, height, style = {} }) {
+  const customStyles = { ...style };
+  if (width !== undefined) {
+    customStyles['--default-logo-w'] = typeof width === 'number' ? `${width}px` : width;
+  }
+  if (height !== undefined) {
+    customStyles['--default-logo-h'] = typeof height === 'number' ? `${height}px` : height;
+  }
+
   return (
     <div
       className={`crest-logo-wrapper ${className}`}
-      style={{
-        '--logo-w': typeof width === 'number' ? `${width}px` : width,
-        '--logo-h': typeof height === 'number' ? `${height}px` : height,
-        width: 'var(--logo-w)',
-        height: 'var(--logo-h)',
-        marginTop: marginTop,
-        position: 'relative',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexShrink: 0,
-        ...style,
-      }}
+      style={customStyles}
       role="img"
       aria-label="S.K.P.D. Alumni Association Logo"
     >

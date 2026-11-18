@@ -42,7 +42,7 @@
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: #121826;
+  color: #333333;
   margin-bottom: 16px;
 }
 
@@ -124,6 +124,7 @@
     border-radius: 32px;
     padding-top: 80px;
   }
+
   .global-network-title {
     font-size: 50px;
   }
@@ -133,6 +134,7 @@
   .global-network-card {
     padding-top: 56px;
   }
+
   .global-network-title {
     font-size: 38px;
   }
@@ -142,13 +144,16 @@
   .global-network-section {
     padding: 30px 16px 50px 16px;
   }
+
   .global-network-card {
     border-radius: 20px;
     padding-top: 44px;
   }
+
   .global-network-title {
     font-size: 30px;
   }
+
   .global-network-subtitle {
     font-size: 15px;
     margin-bottom: 24px;
@@ -160,18 +165,22 @@
     padding-top: 36px;
     border-radius: 18px;
   }
+
   .global-network-title {
     font-size: 25px;
     line-height: 1.2;
   }
+
   .global-network-subtitle {
     font-size: 13.5px;
     line-height: 1.5;
   }
+
   .global-cta-btn {
     font-size: 14px;
     padding: 8px 18px 8px 8px;
   }
+
   .global-cta-icon {
     width: 34px;
     height: 34px;
@@ -189,4 +198,3 @@
     font-size: 20px;
   }
 }
-
