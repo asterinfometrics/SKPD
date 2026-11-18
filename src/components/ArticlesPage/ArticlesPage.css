@@ -4,7 +4,7 @@
   flex-direction: column;
   background-color: #ffffff;
   color: #0f172a;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .articles-main-content {
